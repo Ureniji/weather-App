@@ -4,6 +4,11 @@ body {
   background-position: center center;
   background-attachment: fixed;
 }
-li borderless {
-  border-top: 0 none;
+.card-body {
+  background-color: rgba(225, 225, 225, 0.2);
+  border: 1px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.2);
+  border-right-color: rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+  border-left-color: rgba(0, 0, 0, 0.2);
 }
