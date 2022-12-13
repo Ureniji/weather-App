@@ -53,7 +53,7 @@
                 </button>
               </div>
             </form>
-            <div class="row m-5 mb-2">
+            <div class="row m-5 mb-2 no-gutters">
               <!-- weather-icon -->
               <div class="col-sm">
                 <img
@@ -64,7 +64,7 @@
                 />
               </div>
               <!-- city and weather -->
-              <div class="col-sm">
+              <div class="col-sm h-100">
                 <div class="card border border-0 text-center">
                   <div class="card-body">
                     <div class="card-title">
@@ -85,94 +85,83 @@
              
                  <p class="m-0 ps-5">
 
-  <button type="button" class="p-0 border-0 btn dropdown-toggle dropdown-toggle-split opacity-25" style="color:white;"  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <button type="button" class="p-0 border-0 btn dropdown-toggle dropdown-toggle-split opacity-75" style="color:white;"  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
   </button>
 </p>
 <div class="collapse" id="collapseExample">
   <div class="card card-body border-0 mt-0 g-4" 
     style="background: 
     rgba(255, 255, 255, 0)">
-    <ul class="list-group list-group-horizontal border-0 text-center">
-                      <li class="list-group-item border-0">
-                        <div class="card-preview-icon border-0 text-white ">
-                          <div class="card-body">
-                            <h5 class="card-title-day">MO</h5>
-                            <img src="/src/img/Paper-Icons/SVG/regen.svg" class="card-img-top my-2" alt="weather-icon">
-                            <p class="card-subtitle-temp">12° &#160 4°</p>
-                          </div>
-                        </div>
-                      </li>
-                      <!--  -->
-                     <li class="list-group-item border-0" style="background:rgba(255, 255, 255, 0)" >
-                        <div class="card border-0 text-white" style="background: rgba(255, 255, 255, 0)">
-                          <div class="card-body">
-                            <h5 class="card-title-day">TU</h5>
-                            <img src="/src/img/Paper-Icons/SVG/2-Wolken.svg" class="card-img-top my-2" alt="weather-icon">
-                            <p class="card-subtitle-temp">10° &#160 7°</p>
-                          </div>
-                        </div>
-                      </li>
-                      <!--  -->
-                      <li class="list-group-item border-0" style="background:rgba(255, 255, 255, 0)" >
-                        <div class="card border-0 text-white" style="background: rgba(255, 255, 255, 0)">
-                          <div class="card-body ">
-                            <h5 class="card-title-day">WED</h5>
-                            <img src="/src/img/Paper-Icons/SVG/mehrere Wolken.svg" class="card-img-top my-2" alt="weather-icon">
-                            <p class="card-subtitle-temp">12° &#160 4°</p>
-                          </div>
-                        </div>
-                      </li>
-                      <!--  -->
-                      <li class="list-group-item border-0" style="background:rgba(255, 255, 255, 0)" >
-                        <div class="card border-0 text-white" style="background: rgba(255, 255, 255, 0)">
-                          <div class="card-body">
-                            <h5 class="card-title-day">THU</h5>
-                            <img src="/src/img/Paper-Icons/SVG/regen.svg" class="card-img-top my-2" alt="weather-icon">
-                            <p class="card-subtitle-temp">12° &#160 4°</p>
-                          </div>
-                        </div>
-                      </li>
-                      <!--  -->
-                      <li class="list-group-item border-0" style="background:rgba(255, 255, 255, 0)" >
-                        <div class="card border-0 text-white" style="background: rgba(255, 255, 255, 0)">
-                          <div class="card-body">
-                            <h5 class="card-title-day">FRI</h5>
-                            <img src="/src/img/Paper-Icons/SVG/regen.svg" class="card-img-top my-2" alt="weather-icon">
-                            <p class="card-subtitle-temp">12° &#160 4°</p>
-                          </div>
-                        </div>
-                      </li>
-                      <!--  -->
-                      <li class="list-group-item border-0" style="background:rgba(255, 255, 255, 0)" >
-                        <div class="card border-0 text-white" style="background: rgba(255, 255, 255, 0)">
-                          <div class="card-body">
-                            <h5 class="card-title-day">SAT</h5>
-                            <img src="/src/img/Paper-Icons/SVG/regen.svg" class="card-img-top my-2" alt="weather-icon">
-                            <p class="card-subtitle-temp">12° &#160 4°</p>
-                          </div>
-                        </div>
-                      </li>
-                      <!--  -->
-                      <li class="list-group-item border-0" style="background:rgba(255, 255, 255, 0)" >
-                        <div class="card border-0 text-white" style="background: rgba(255, 255, 255, 0)">
-                          <div class="card-body">
-                            <h5 class="card-title-day">SUN</h5>
-                            <img src="/src/img/Paper-Icons/SVG/regen.svg" class="card-img-top my-2" alt="weather-icon">
-                            <p class="card-subtitle-temp">12° &#160 4°</p>
-                          </div>
-                        </div>
-                      </li>
-                      <!--  -->
-                      <li class="list-group-item border-0" style="background:rgba(255, 255, 255, 0)" >
-                        <div class="card border-0 text-white" style="background: rgba(255, 255, 255, 0)">
-                          <div class="card-body">
-                            <h5 class="card-title-day">MO</h5>
-                            <img src="/src/img/Paper-Icons/SVG/regen.svg" class="card-img-top my-2" alt="weather-icon">
-                            <p class="card-subtitle-temp">12° &#160 4°</p>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
+    <!--preview-icon-->
+    <div class="row card-group">
+    
+        <div class="col-sm card-icon text-center border-0">
+            <h5 class="card-title-day mb-2">MO</h5>
+          <img src="/src/img/Paper-Icons/SVG/umbrella.svg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-subtitle-temp fs-3">18° &#160 4°</p>
+          </div>
+        </div>
+
+        <!-- -->
+         <div class="col-sm card-icon text-center">
+            <h5 class="card-title-day mb-2">TU</h5>
+          <img src="/src/img/Paper-Icons/SVG/snow-flacke.svg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text fs-3">18° &#160 4°</p>
+          </div>
+        </div>
+        
+      <!-- -->
+        <div class="col-sm card-icon text-center border-0">
+            <h5 class="card-title-day mb-2">WED</h5>
+          <img src="/src/img/Paper-Icons/SVG/sun.svg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-subtitle-temp fs-3">18° &#160 4°</p>
+          </div>
+        </div>
+
+        <!-- -->
+         <div class="col-sm card-icon text-center">
+            <h5 class="card-title-day mb-2">THU</h5>
+          <img src="/src/img/Paper-Icons/SVG/rainbow.svg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text fs-3">18° &#160 4°</p>
+          </div>
+          
+        </div>
+        
+      <!-- -->
+      <div class="col-sm card-icon text-center border-0">
+            <h5 class="card-title-day mb-2">FRI</h5>
+          <img src="/src/img/Paper-Icons/SVG/fog.svg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-subtitle-temp fs-3">18° &#160 4°</p>
+          </div>
+        </div>
+
+        <!-- -->
+         <div class="col-sm card-icon text-center">
+            <h5 class="card-title-day mb-2">SA</h5>
+          <img src="/src/img/Paper-Icons/SVG/rain-thunder.svg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text fs-3">18° &#160 4°</p>
+          </div>
+          
+        </div>
+        
+      <!-- -->
+      <div class="col-sm card-icon text-center border-0">
+            <h5 class="card-title-day mb-2">SUN</h5>
+          <img src="/src/img/Paper-Icons/SVG/clouds.svg" class="card-img-top" alt="...">
+          <div class="card-body">
+            
+            <p class="card-subtitle-temp fs-3">18° &#160 4°</p>
+          </div>
+          
+        </div>
+      
+      </div>
   </div>
 </div>
 
