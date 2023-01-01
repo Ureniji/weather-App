@@ -25,11 +25,16 @@ function formatDate(date) {
     "November",
     "December",
   ];
+  let hours = date.getHours();
+  if (hours < 10) hours = `0${hours}`;
+  let minutes = date.getMinutes();
+  if (minutes < 10) minutes = `0${minutes}`;
   let month = months[monthIndex];
-  let currentDate = date.getDate();
-  let year = date.getFullYear();
-  return `${day}, ${month} ${currentDate}, ${year} `;
+  let Date = date.getDate();
+  return `<br>${hours} : ${minutes}
+  </br> ${day}, ${month} ${Date}`;
 }
+function formatTime(time) {}
 
 function displayWeatherDetails(response) {
   console.log(response);
@@ -45,6 +50,9 @@ function displayWeatherDetails(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+  document
+    .querySelector("#icon")
+    .setAttribute("src", `src/img/Icons/${response.data.weather[0].icon}.svg`);
 }
 function searchCity(city) {
   let apiKey = "197ef3a642b76eef90e131866f74a0a0";
@@ -53,7 +61,7 @@ function searchCity(city) {
 }
 
 function handleSubmit(event) {
-  event.preventDefault;
+  event.preventDefault();
   let city = document.querySelector("#city-input").value;
   searchCity(city);
 }
@@ -64,4 +72,5 @@ searchForm.addEventListener("submit", handleSubmit);
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
-searchCity("paris");
+
+searchCity("Himeji");

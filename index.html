@@ -15,19 +15,20 @@
   </head>
   <body>
     <div class="background mt-5">
-      <div class="weather container bg-primary">
+      <div class="weather container p-4 rounded">
         <!--  -->
         <form id="search-form">
-          <div class="row justify-content-center">
+          <div class="row justify-content-center m-4">
             <!-- input field -->
-            <div class="col-auto ms-5">
+            <div class="col-3 ms-5">
               <input
                 type="text"
-                class="form-control border-0"
+                class="form-control ps-2 text-white border-0 fs-3 text-center"
                 style="background: rgba(255, 255, 255, 0)"
                 id="city-input"
+                autofocus="off"
               />
-              <hr class="m-0" />
+              <hr class="mb-4 mt-0 text-white opacity-75" />
             </div>
             <!-- search btn -->
             <div class="col-2">
@@ -53,29 +54,45 @@
         <!--  main-weather-content -->
         <div class="container">
           <div class="row">
-            <div class="col-sm-5 main-weather-icon bg-white">
-              <img
-                src="src/img/Paper-Icons/SVG/rain-thunder.svg"
-                class="center-block pt-4 ps-2"
-                alt="rain"
-              />
+            <div class="col-sm-5 main-weather-icon">
+              <img class="center-block mt-4" id="icon" />
             </div>
             <!-- current location and temp -->
-            <div class="col-sm-7 city bg-white text-center ">
-              <h1 id="city" class="my-5 h-1 fw-bolder"></h1>
-              <p id="temperature">
-                <div id="description"></div>
-                <br />
-                <div >
-                  <span id="temperature_max"></span>
-                  <span id="temperature_min"></span>
-                </div>
-              </p>
-              <div id="date" class="m-0"></div>
+            <div class="col-sm-7 city bg-white text-center rounded">
+              <h1 id="city" class="my-3 h-1 fw-bolder"></h1>
+              <h2 id="temperature" class="m-0 pt-3"></h2>
+              <div id="description"></div>
+              <div>
+                <span id="temperature_max"></span>
+                <span id="temperature_min"></span>
+              </div>
+              <h6 id="date" class="m-4 h-3"></h6>
             </div>
           </div>
         </div>
+        <!-- dropdown menu -->
+        <button
+          type="button"
+          style="color: #fff"
+          class="btn dropdown-toggle dropdown-toggle-collapse dropdown-toggle-split"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample"
+        ></button>
         <!-- forecast weather content -->
+        <div class="collapse" id="collapseExample">
+          <!--  -->
+          <div class="bg-warning">
+            <div class="row m-0">
+              <div class="col">Lorem ipsum dolor sit amet.</div>
+              <div class="col">Lorem ipsum dolor sit amet.</div>
+              <div class="col">Lorem ipsum dolor sit amet.</div>
+              <div class="col">Lorem ipsum dolor sit amet.</div>
+              <div class="col">Lorem ipsum dolor sit amet.</div>
+              <div class="col">Lorem ipsum dolor sit amet.</div>
+              <div class="col">Lorem ipsum dolor sit amet.</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <script
