@@ -36,3 +36,8 @@ hr {
   height: 250px;
   width: 250px;
 }
+
+.weather container {
+  overflow: auto;
+  resize: both;
+}

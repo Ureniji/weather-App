@@ -10,6 +10,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
@@ -24,6 +25,7 @@
                 type="text"
                 class="form-control border-0"
                 style="background: rgba(255, 255, 255, 0)"
+                id="city-input"
               />
               <hr class="m-0" />
             </div>
@@ -59,21 +61,21 @@
               />
             </div>
             <!-- current location and temp -->
-            <div class="col-sm-7 city bg-warning">
-              <h1 id="city"></h1>
-              <p id="temperature"><span id="description"></span></p>
-              <div id="date"></div>
+            <div class="col-sm-7 city bg-white text-center ">
+              <h1 id="city" class="my-5 h-1 fw-bolder"></h1>
+              <p id="temperature">
+                <div id="description"></div>
+                <br />
+                <div >
+                  <span id="temperature_max"></span>
+                  <span id="temperature_min"></span>
+                </div>
+              </p>
+              <div id="date" class="m-0"></div>
             </div>
           </div>
         </div>
         <!-- forecast weather content -->
-        <div class="row">
-          <div class="container bg-danger">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
-            iste odit rerum repellendus facilis ipsa. Sed debitis incidunt
-            quisquam nobis.
-          </div>
-        </div>
       </div>
     </div>
     <script
