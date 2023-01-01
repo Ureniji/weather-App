@@ -46,12 +46,22 @@ function displayWeatherDetails(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
 }
+function searchCity(city) {
+  let apiKey = "197ef3a642b76eef90e131866f74a0a0";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherDetails);
+}
 
-let apiKey = "197ef3a642b76eef90e131866f74a0a0";
-let city = "Berlin";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayWeatherDetails);
+function handleSubmit(event) {
+  event.preventDefault;
+  let city = document.querySelector("#city-input").value;
+  searchCity(city);
+}
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
 
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
+searchCity("paris");
