@@ -15,15 +15,15 @@
   </head>
   <body>
     <div class="background mt-5">
-      <div class="weather container p-4 rounded">
+      <div class="weather container pt-3 pb-1 px-4 rounded">
         <!--  -->
         <form id="search-form">
           <div class="row justify-content-center m-4">
             <!-- input field -->
-            <div class="col-3 ms-5">
+            <div contenteditable="true" class="col-4 ms-5">
               <input
-                type="text"
                 class="form-control ps-2 text-white border-0 fs-3 text-center"
+                type="text"
                 style="background: rgba(255, 255, 255, 0)"
                 id="city-input"
                 autofocus="off"
@@ -66,7 +66,8 @@
                 <span id="temperature_max"></span>
                 <span id="temperature_min"></span>
               </div>
-              <h6 id="date" class="m-4 h-3"></h6>
+              <h6 id="time"></h6>
+              <h4 id="date" class="m-4 h-3"></h4>
             </div>
           </div>
         </div>

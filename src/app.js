@@ -69,8 +69,8 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-let dateElement = document.querySelector("#date");
+let dateElement = document.querySelector("#date").value;
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
-searchCity("Himeji");
+searchCity("Jakarta");
