@@ -39,9 +39,9 @@ function formatTime(time) {}
 function displayWeatherDetails(response) {
   console.log(response);
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celciusTemperature = response.data.main.temp;
+  document.querySelector("#temperature").innerHTML =
+    Math.round(celciusTemperature);
   document.querySelector("#temperature_max").innerHTML = Math.round(
     response.data.main.temp_max
   );
@@ -66,11 +66,23 @@ function handleSubmit(event) {
   searchCity(city);
 }
 
+function displayTemperatureInFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = celciusTemperature * 1.8 + 23;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let celciusTemperature = null;
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
+
+let fahrenheitlink = document.querySelector("#fahrenheit-link");
+fahrenheitlink.addEventListener("click", displayTemperatureInFahrenheit);
 
 searchCity("Jakarta");
