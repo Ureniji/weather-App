@@ -1,5 +1,5 @@
 body {
-  background-image: url("/weather-App/src/img/bg/tom-barrett-hgGplX3PFBg-unsplash.jpg");
+  background-image: url("/src/img/bg/great-sky.jpg");
   height: 100%;
   overflow: hidden;
   margin: 0;
@@ -24,10 +24,11 @@ input[type="text"]:focus {
 }
 .weather, 
 .card-body {
-      rgba(255, 255, 255, 0.35);
+  rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(15px);
   box-shadow: 5px 3px 50px rgba(255, 255, 255, 0.3);
+
 
 }
 .weather {
@@ -40,3 +41,19 @@ input[type="text"]:focus {
   height: 250px;
   width: 250px;
 }
+.active {
+  cursor: default;
+  color :black;
+}
+
+.temp-size {
+  font-family: monospace;
+  font-size: 50px;
+
+}
+.temp-difference{
+  height: 30px;
+  width: 30px;
+}
+
+.units { vertical-align:text-top; font-size: 0.9em;}

@@ -34,25 +34,27 @@ function formatDate(date) {
   return `<br>${hours} : ${minutes}
   </br> ${day}, ${month} ${Date}`;
 }
-function formatTime(time) {}
 
 function displayWeatherDetails(response) {
-  console.log(response);
-  document.querySelector("#city").innerHTML = response.data.name;
+  let cityElement = document.querySelector("#city");
+  let temperatureElement = document.querySelector("#temperature");
+  let temperatureMaxElement = document.querySelector("#temperature_max");
+  let temperatureMinElement = document.querySelector("#temperature_min");
+  let descriptionElement = document.querySelector("#description");
+  let iconElement = document.querySelector("#icon");
+
   celciusTemperature = response.data.main.temp;
-  document.querySelector("#temperature").innerHTML =
-    Math.round(celciusTemperature);
-  document.querySelector("#temperature_max").innerHTML = Math.round(
-    response.data.main.temp_max
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+  celciusTemperatureMax = response.data.main.temp_max;
+  temperatureMaxElement.innerHTML = Math.round(celciusTemperatureMax);
+  celciusTemperatureMin = response.data.main.temp_min;
+  temperatureMinElement.innerHTML = Math.round(celciusTemperatureMin);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `src/img/Icons/${response.data.weather[0].icon}.svg`
   );
-  document.querySelector("#temperature_min").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].description;
-  document
-    .querySelector("#icon")
-    .setAttribute("src", `src/img/Icons/${response.data.weather[0].icon}.svg`);
 }
 function searchCity(city) {
   let apiKey = "197ef3a642b76eef90e131866f74a0a0";
@@ -69,17 +71,33 @@ function handleSubmit(event) {
 function displayTemperatureInFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  let temperatureMaxElement = document.querySelector("#temperature_max");
+  let temperatureMinElement = document.querySelector("#temperature_min");
+  celciusLink.classList.remove("active");
+  fahrenheitlink.classList.add("active");
   let fahrenheitTemperature = celciusTemperature * 1.8 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  let fahrenheitTemperatureMax = celciusTemperatureMax * 1.8 + 32;
+  temperatureMaxElement.innerHTML = Math.round(fahrenheitTemperatureMax);
+  let fahrenheitTemperatureMin = celciusTemperatureMin * 1.8 + 32;
+  temperatureMinElement.innerHTML = Math.round(fahrenheitTemperatureMin);
 }
 
 function displayTemperatureInCelcius(event) {
   event.preventDefault();
+  celciusLink.classList.add("active");
+  fahrenheitlink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celciusTemperature);
+  let temperatureMaxElement = document.querySelector("#temperature_max");
+  temperatureMaxElement.innerHTML = Math.round(celciusTemperatureMax);
+  let temperatureMinElement = document.querySelector("#temperature_min");
+  temperatureMinElement.innerHTML = Math.round(celciusTemperatureMin);
 }
 
 let celciusTemperature = null;
+let celciusTemperatureMax = null;
+let celciusTemperatureMin = null;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="background mt-5">
+    <div class="background mt-5 pt-5">
       <div class="weather container pt-3 pb-1 px-4 rounded">
         <!--  -->
         <form id="search-form">
@@ -59,16 +59,40 @@
             </div>
             <!-- current location and temp -->
             <div class="col-sm-7 city bg-white text-center rounded">
-              <h1 id="city" class="my-3 h-1 fw-bolder"></h1>
-              <div class="m-0 pt-3">
-                <strong id="temperature"></strong>°<span class="units">
-                  <a href="#" id="celcius-link"> C </a>|
-                  <a href="#" id="fahrenheit-link">F</a></span
+              <h1 id="city" class="city my-3 h-1 fw-bolder text-secondary"></h1>
+              <div class="m-0 pb-0 pt-3">
+                <strong id="temperature" class="temp-size"></strong>
+                <span class="units">
+                  <a
+                    href="#"
+                    id="celcius-link"
+                    class="active text-decoration-none"
+                  >
+                    °C </a
+                  >|
+                  <a
+                    href="#"
+                    id="fahrenheit-link"
+                    class="active text-decoration-none"
+                    >°F</a
+                  ></span
                 >
               </div>
-              <div id="description"></div>
+              <div id="description" class=""></div>
               <div>
-                <span id="temperature_max"></span>
+                <img
+                  src="src/img/Icons/temperature_max.svg"
+                  alt="temp-difference"
+                  class="temp-difference"
+                />
+                <span> Max.</span>
+                <span id="temperature_max" class="pe-4"></span>
+                <img
+                  src="src/img/Icons/temperature_min.svg"
+                  alt="temp-difference"
+                  class="temp-difference"
+                />
+                <span class=""> Min.</span>
                 <span id="temperature_min"></span>
               </div>
               <h6 id="time-1"></h6>
