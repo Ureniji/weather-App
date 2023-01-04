@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="background mt-5 pt-5">
-      <div class="weather container pt-3 pb-1 px-4 rounded">
+      <div class="weather container p-4 pb-1 rounded">
         <!--  -->
         <form id="search-form">
           <div class="row justify-content-center m-4">
@@ -55,13 +55,13 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-5 main-weather-icon">
-              <img class="center-block mt-4" id="icon" />
+              <img class="center-block" id="icon" />
             </div>
             <!-- current location and temp -->
             <div class="col-sm-7 city bg-white text-center rounded">
               <h1 id="city" class="city my-3 h-1 fw-bolder text-secondary"></h1>
-              <div class="m-0 pb-0 pt-3">
-                <strong id="temperature" class="temp-size"></strong>
+              <div class="pt-3 mb-0">
+                <strong id="temperature" class="temp-size font-monospace"></strong>
                 <span class="units">
                   <a
                     href="#"
@@ -96,7 +96,7 @@
                 <span id="temperature_min"></span>
               </div>
               <h6 id="time-1"></h6>
-              <h4 id="date" class="m-4 h-3"></h4>
+              <h6 id="date" class="font-monospace""></h6>
             </div>
           </div>
         </div>
@@ -104,22 +104,34 @@
         <button
           type="button"
           style="color: #fff"
-          class="btn dropdown-toggle dropdown-toggle-collapse dropdown-toggle-split"
+          class="btn dropdown-toggle dropdown-toggle-collapse dropdown-toggle-split pt-3"
           data-bs-toggle="collapse"
           data-bs-target="#collapseExample"
         ></button>
         <!-- forecast weather content -->
         <div class="collapse" id="collapseExample">
           <!--  -->
-          <div class="bg-warning">
-            <div class="row m-0">
-              <div class="col">Lorem ipsum dolor sit amet.</div>
-              <div class="col">Lorem ipsum dolor sit amet.</div>
-              <div class="col">Lorem ipsum dolor sit amet.</div>
-              <div class="col">Lorem ipsum dolor sit amet.</div>
-              <div class="col">Lorem ipsum dolor sit amet.</div>
-              <div class="col">Lorem ipsum dolor sit amet.</div>
-              <div class="col">Lorem ipsum dolor sit amet.</div>
+          <div class="forecast mb-4 rounded  bg-white fw-bold">
+            <div class="row p-3 text-center ">
+              <div class="col">
+                <div class="forecast-day border-right border-left">THU
+                  <img
+                  src="src/img/Icons/temperature_min.svg"
+                  alt="forecast-icon"
+                  style="height: 54px;
+                  width: 54px;"
+                  class="forecast-icon"
+                />
+                <span class="forecastTempMax">18</span>
+                <span class="forecastTempMin opacity-50">8</span>
+                </div>
+              </div>
+              <div class="col">Lorem ipsum dolor sit.</div>
+              <div class="col">Lorem ipsum dolor sit.</div>
+              <div class="col">Lorem ipsum dolor sit.</div>
+              <div class="col">Lorem ipsum dolor sit.</div>
+              <div class="col">Lorem ipsum dolor sit.</div>
+              <div class="col">Lorem ipsum dolor sit.</div>
             </div>
           </div>
         </div>

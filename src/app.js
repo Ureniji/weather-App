@@ -31,8 +31,8 @@ function formatDate(date) {
   if (minutes < 10) minutes = `0${minutes}`;
   let month = months[monthIndex];
   let Date = date.getDate();
-  return `<br>${hours} : ${minutes}
-  </br> ${day}, ${month} ${Date}`;
+  return `<br><strong>${hours} : ${minutes}</strong>
+  </br><small>${day}, ${month} ${Date}</small>`;
 }
 
 function displayWeatherDetails(response) {
@@ -112,4 +112,4 @@ celciusLink.addEventListener("click", displayTemperatureInCelcius);
 let fahrenheitlink = document.querySelector("#fahrenheit-link");
 fahrenheitlink.addEventListener("click", displayTemperatureInFahrenheit);
 
-searchCity("Jakarta");
+searchCity("york");
