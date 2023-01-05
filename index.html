@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="background mt-5 pt-5">
-      <div class="weather container p-4 pb-1 rounded">
+    <div class="background mt-3">
+      <div class="weather container px-4 pb-1 pt-1 rounded">
         <!--  -->
         <form id="search-form">
-          <div class="row justify-content-center m-4">
+          <div class="row justify-content-center mt-4">
             <!-- input field -->
             <div class="col-4 ms-5">
               <input
@@ -28,10 +28,10 @@
                 id="city-input"
                 autofocus="off"
               />
-              <hr class="mb-4 mt-0 text-white opacity-75" />
+              <hr class="m-0 text-white opacity-75" />
             </div>
             <!-- search btn -->
-            <div class="col-2">
+            <div class="col-2 p-0">
               <button type="submit" class="btn p-0">
                 <i
                   ><svg
@@ -40,7 +40,7 @@
                     height="40"
                     color="white"
                     fill="currentColor"
-                    class="bi bi-search p-0 mt-2"
+                    class="bi bi-searchn p-2"
                     viewBox="0 0 20 20"
                   >
                     <path
@@ -53,12 +53,13 @@
         </form>
         <!--  main-weather-content -->
         <div class="container">
-          <div class="row">
+          <div class="row justify-content-center">
             <div class="col-sm-5 main-weather-icon">
-              <img class="center-block" id="icon" />
+              <img class="center-block mt-3" id="icon" />
+              
             </div>
             <!-- current location and temp -->
-            <div class="col-sm-7 city bg-white text-center rounded">
+            <div class="col-auto city bg-white text-center rounded mt-2">
               <h1 id="city" class="city my-3 h-1 fw-bolder text-secondary"></h1>
               <div class="pt-3 mb-0">
                 <strong id="temperature" class="temp-size font-monospace"></strong>
@@ -111,7 +112,7 @@
         <!-- forecast weather content -->
         <div class="collapse" id="collapseExample">
           <!--  -->
-          <div class="forecast mb-4 rounded  bg-white fw-bold">
+          <div class="forecast mb-4 rounded fw-bold">
             <div class="row p-3 text-center ">
               <div class="col">
                 <div class="forecast-day border-right border-left">THU
@@ -126,12 +127,6 @@
                 <span class="forecastTempMin opacity-50">8</span>
                 </div>
               </div>
-              <div class="col">Lorem ipsum dolor sit.</div>
-              <div class="col">Lorem ipsum dolor sit.</div>
-              <div class="col">Lorem ipsum dolor sit.</div>
-              <div class="col">Lorem ipsum dolor sit.</div>
-              <div class="col">Lorem ipsum dolor sit.</div>
-              <div class="col">Lorem ipsum dolor sit.</div>
             </div>
           </div>
         </div>

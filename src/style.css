@@ -9,6 +9,7 @@ input[type="text"]:focus {
   box-shadow: 0 0 0 rgb(255, 255, 255);
 }
 
+
 .center-block {
   display: block;
   margin-left: auto;
@@ -32,14 +33,14 @@ input[type="text"]:focus {
 
 }
 .weather {
-  max-width: 700px;
-  max-height: 800px;
+  max-width: 600px;
+  max-height: 700px;
   background: linear-gradient(135deg), rgba(255, 255, 255, 0.1),
 
 }
 .main-weather-icon img {
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
 }
 .active {
   cursor: default;
