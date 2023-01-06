@@ -34,7 +34,12 @@ function formatDate(date) {
   return `<br><strong>${hours} : ${minutes}</strong>
   </br><small>${day}, ${month} ${Date}</small>`;
 }
-
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "aa09763d916df0424c840d55bfc2d2c9";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayWeatherDetails(response) {
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
@@ -55,9 +60,12 @@ function displayWeatherDetails(response) {
     "src",
     `src/img/Icons/${response.data.weather[0].icon}.svg`
   );
+  console.log(response.data);
+  getForecast(response.data.coord);
 }
+
 function searchCity(city) {
-  let apiKey = "197ef3a642b76eef90e131866f74a0a0";
+  let apiKey = "aa09763d916df0424c840d55bfc2d2c9";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherDetails);
 }
@@ -101,12 +109,12 @@ function displayForecast() {
   let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
   let forecastHTML = `<div class="row p-3 text-center bg-danger">`; // storing the HTML content
-  days.forEach(function (day) {
+  days.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
     <div class="col-2">
-        <div class="forecast-day border-right border-left">${day}</div>
+        <div class="forecast-day border-right border-left">${forecastDay.dt}</div>
           <img
             src="src/img/Icons/temperature_min.svg"
             alt="forecast-icon"
