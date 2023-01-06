@@ -55,13 +55,13 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-sm-5 main-weather-icon">
-              <img class="center-block mt-3" id="icon" />
-              
+              <h5 id="city" class="city mt-4 fw-bolder text-center text-light"></h5>
+              <img class="center-block mt-1" id="icon" />
             </div>
             <!-- current location and temp -->
-            <div class="col-auto city bg-white text-center rounded mt-2">
-              <h1 id="city" class="city my-3 h-1 fw-bolder text-secondary"></h1>
-              <div class="pt-3 mb-0">
+            <div class="col-auto city text-center rounded">
+
+              <div class="mb-0">
                 <strong id="temperature" class="temp-size font-monospace"></strong>
                 <span class="units">
                   <a
@@ -80,11 +80,16 @@
                 >
               </div>
               <div id="description" class=""></div>
-              <div>
+              <div class="svg-icon">
+                <svg src="src/img/Icons/temperature_max.png"  height="10%" width="10%" viewBox="0 0 120 120">
+                 
+                  
+                </svg>
+                
                 <img
                   src="src/img/Icons/temperature_max.svg"
                   alt="temp-difference"
-                  class="temp-difference"
+                  class="temp-difference shadow-lg"
                 />
                 <span> Max.</span>
                 <span id="temperature_max" class="pe-4"></span>
@@ -109,27 +114,14 @@
           data-bs-toggle="collapse"
           data-bs-target="#collapseExample"
         ></button>
+        <!-- <div class="weather-forecast" id="forecast"></div> -->
         <!-- forecast weather content -->
         <div class="collapse" id="collapseExample">
-          <!--  -->
-          <div class="forecast mb-4 rounded fw-bold">
-            <div class="row p-3 text-center ">
-              <div class="col">
-                <div class="forecast-day border-right border-left">THU
-                  <img
-                  src="src/img/Icons/temperature_min.svg"
-                  alt="forecast-icon"
-                  style="height: 54px;
-                  width: 54px;"
-                  class="forecast-icon"
-                />
-                <span class="forecastTempMax">18</span>
-                <span class="forecastTempMin opacity-50">8</span>
-                </div>
-              </div>
-            </div>
+          <div class="forecast mb-4 rounded fw-bold" id="forecast">
+            <!-- <div class="row p-3 text-center bg-white"></div> -->
           </div>
         </div>
+        
       </div>
     </div>
     <script

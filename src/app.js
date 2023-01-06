@@ -95,6 +95,36 @@ function displayTemperatureInCelcius(event) {
   temperatureMinElement.innerHTML = Math.round(celciusTemperatureMin);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+  let forecastHTML = `<div class="row p-3 text-center bg-danger">`; // storing the HTML content
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+        <div class="forecast-day border-right border-left">${day}</div>
+          <img
+            src="src/img/Icons/temperature_min.svg"
+            alt="forecast-icon"
+            style="height: 54px;
+            width: 54px;"
+            class="forecast-icon"/>
+              <div class="weather-forecast-temperaturen">
+                <span class="forecastTemperatureMax">18°</span>
+                <span class="forecastTemperatureMin opacity-50">8°</span>
+              </div>
+          </div>
+      `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 let celciusTemperature = null;
 let celciusTemperatureMax = null;
 let celciusTemperatureMin = null;
@@ -112,4 +142,5 @@ celciusLink.addEventListener("click", displayTemperatureInCelcius);
 let fahrenheitlink = document.querySelector("#fahrenheit-link");
 fahrenheitlink.addEventListener("click", displayTemperatureInFahrenheit);
 
-searchCity("york");
+searchCity("melbourne");
+displayForecast();
