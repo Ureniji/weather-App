@@ -1,5 +1,5 @@
 body {
-  background-image: url("/src/img/bg/great-sky.jpg");
+  background-color: grey;
   height: 100%;
   overflow: hidden;
   margin: 0;
@@ -8,7 +8,6 @@ body {
 input[type="text"]:focus {
   box-shadow: 0 0 0 rgb(255, 255, 255);
 }
-
 .center-block {
   display: block;
   margin-left: auto;
@@ -22,8 +21,7 @@ input[type="text"]:focus {
   height: 100%;
   box-sizing: border-box;
 }
-.weather,
-.card-body {
+.weather {
   backdrop-filter: blur(10px) rgba(255, 255, 255, 0.35);
   -webkit-backdrop-filter: blur(15px);
   box-shadow: 5px 3px 50px rgba(255, 255, 255, 0.3);
@@ -31,7 +29,7 @@ input[type="text"]:focus {
 .weather {
   max-width: 600px;
   max-height: 700px;
-  background: linear-gradient(135deg), rgba(255, 255, 255, 0.1);
+  /* background: linear-gradient(135deg), rgba(255, 255, 255, 0.1); */
 }
 .main-weather-icon img {
   height: 200px;
@@ -51,6 +49,98 @@ input[type="text"]:focus {
 }
 
 .units {
-  vertical-align: text-top;
-  font-size: 0.9em;
+  vertical-align: auto;
+  font-size: 1.5em;
+}
+
+.group {
+  position: relative;
+}
+
+.input {
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  background: transparent;
+}
+
+.input:focus {
+  outline: none;
+}
+
+label {
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.input:focus ~ label,
+.input:valid ~ label {
+  left: 200px;
+  color: red;
+}
+
+.line {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+
+.line:before,
+.line:after {
+  display: block;
+  margin: 0 auto;
+  content: "";
+  height: 2px;
+  width: 0;
+  position: absolute;
+  background: white;
+  opacity: 0.7;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.line:before {
+  left: 50%;
+}
+
+.line:after {
+  right: 50%;
+}
+
+.input:focus ~ .line:before,
+.input:focus ~ .line:after {
+  width: 50%;
+}
+
+/* .highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+} */
+
+.input:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: #031765;
+  }
+
+  to {
+    width: 1px;
+  }
 }

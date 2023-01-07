@@ -80,7 +80,7 @@ label {
   opacity: 0.9;
 } */
 
-.input:focus ~ .highlight {
+/* .input:focus ~ .highlight {
   animation: inputHighlighter 0.3s ease;
 }
 
@@ -93,4 +93,4 @@ label {
     width: 0;
     background: transparent;
   }
-}
+} */

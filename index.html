@@ -18,10 +18,20 @@
       <div class="weather container px-4 pb-1 pt-1 rounded">
         <!--  -->
         <form id="search-form">
-          <div class="row justify-content-center mt-4">
+          <div class="row  mt-4">
+            <div class="col group text-center">
+              <input required="" type="text" class="input border-0 fs-3">
+            <!-- <span class="highlight"></span> -->
+            <span class="line"></span>
+                <label type="submit" class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 20 20">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                </label>
+            </div>
             <!-- input field -->
-            <div class="col-4 ms-5">
-              <input
+            
+              <!-- <input
                 class="form-control ps-2 text-white border-0 fs-3 text-center"
                 type="text"
                 style="background: rgba(255, 255, 255, 0)"
@@ -30,25 +40,10 @@
               />
               <hr class="m-0 text-white opacity-75" />
             </div>
-            <!-- search btn -->
+           
             <div class="col-2 p-0">
-              <button type="submit" class="btn p-0">
-                <i
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    color="white"
-                    fill="currentColor"
-                    class="bi bi-searchn p-2"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                    /></svg
-                ></i>
-              </button>
-            </div>
+               -->
+            
           </div>
         </form>
         <!--  main-weather-content -->
