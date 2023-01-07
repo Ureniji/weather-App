@@ -120,21 +120,6 @@ function handleSubmit(event) {
   searchCity(city);
 }
 
-function displayTemperatureInFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let temperatureMaxElement = document.querySelector("#temperature_max");
-  let temperatureMinElement = document.querySelector("#temperature_min");
-  celciusLink.classList.remove("active");
-  fahrenheitlink.classList.add("active");
-  let fahrenheitTemperature = celciusTemperature * 1.8 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  let fahrenheitTemperatureMax = celciusTemperatureMax * 1.8 + 32;
-  temperatureMaxElement.innerHTML = Math.round(fahrenheitTemperatureMax);
-  let fahrenheitTemperatureMin = celciusTemperatureMin * 1.8 + 32;
-  temperatureMinElement.innerHTML = Math.round(fahrenheitTemperatureMin);
-}
-
 function displayTemperatureInCelcius(event) {
   event.preventDefault();
   celciusLink.classList.add("active");
@@ -157,11 +142,5 @@ searchForm.addEventListener("submit", handleSubmit);
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", displayTemperatureInCelcius);
-
-let fahrenheitlink = document.querySelector("#fahrenheit-link");
-fahrenheitlink.addEventListener("click", displayTemperatureInFahrenheit);
 
 searchCity("berlin");
