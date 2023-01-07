@@ -36,10 +36,54 @@ function formatDate(date) {
 }
 function getForecast(coordinates) {
   console.log(coordinates);
-  let apiKey = "aa09763d916df0424c840d55bfc2d2c9";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  let apiKey = "21a61edab25ec99fdc0f38dd9a3013d7";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
+
+function formatDay(forecastStamp) {
+  let date = new Date(forecastStamp * 1000); //
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row p-3 text-center bg-warning">`; // storing the HTML content
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML += `
+    <div class="col-2">
+        <div class="forecast-day border-right border-left">${formatDay(
+          forecastDay.dt
+        )}</div>
+          <img
+            src="src/img/Icons/${forecastDay.weather[0].icon}.svg"
+            alt="forecast-icon"
+            style="height: 54px;
+            width: 54px;"
+            class="forecast-icon"/>
+              <div class="weather-forecast-temperaturen">
+                <span class="forecastTemperatureMax">${Math.round(
+                  forecastDay.temp.max
+                )}
+                <span class="forecastTemperatureMin opacity-50 bg-warning ps-3">${Math.round(
+                  forecastDay.temp.min
+                )}°</span>
+              </div>
+          </div>
+      `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeatherDetails(response) {
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
@@ -103,36 +147,6 @@ function displayTemperatureInCelcius(event) {
   temperatureMinElement.innerHTML = Math.round(celciusTemperatureMin);
 }
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
-  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-
-  let forecastHTML = `<div class="row p-3 text-center bg-danger">`; // storing the HTML content
-  days.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `
-    <div class="col-2">
-        <div class="forecast-day border-right border-left">${forecastDay.dt}</div>
-          <img
-            src="src/img/Icons/temperature_min.svg"
-            alt="forecast-icon"
-            style="height: 54px;
-            width: 54px;"
-            class="forecast-icon"/>
-              <div class="weather-forecast-temperaturen">
-                <span class="forecastTemperatureMax">18°</span>
-                <span class="forecastTemperatureMin opacity-50">8°</span>
-              </div>
-          </div>
-      `;
-  });
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
-}
-
 let celciusTemperature = null;
 let celciusTemperatureMax = null;
 let celciusTemperatureMin = null;
@@ -150,5 +164,4 @@ celciusLink.addEventListener("click", displayTemperatureInCelcius);
 let fahrenheitlink = document.querySelector("#fahrenheit-link");
 fahrenheitlink.addEventListener("click", displayTemperatureInFahrenheit);
 
-searchCity("melbourne");
-displayForecast();
+searchCity("berlin");
