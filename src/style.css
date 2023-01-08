@@ -9,6 +9,7 @@ body {
 input[type="text"]:focus {
   box-shadow: 0 0 0 rgb(255, 255, 255);
 }
+
 .center-block {
   display: block;
   margin-left: auto;
@@ -51,79 +52,4 @@ input[type="text"]:focus {
 .units {
   vertical-align: auto;
   font-size: 1.5em;
-}
-
-.group {
-  position: relative;
-}
-
-.input {
-  display: block;
-  width: 150px;
-  background: transparent;
-}
-
-.input:focus {
-  outline: none;
-}
-
-label {
-  position: absolute;
-  pointer-events: none;
-  left: 10px;
-  top: 10px;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-
-.input:focus ~ label,
-.input:valid ~ label {
-  left: 150px;
-  color: white;
-}
-
-.line {
-  position: relative;
-  display: block;
-  width: 150px;
-}
-
-.line:before,
-.line:after {
-  content: "";
-  height: 2px;
-  width: 0;
-  position: absolute;
-  background: transparent;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-
-.line:before {
-  left: 50%;
-}
-
-.line:after {
-  right: 50%;
-}
-
-.input:focus ~ .line:before,
-.input:focus ~ .line:after {
-  width: 50%;
-}
-
-.input:focus ~ .highlight {
-  animation: inputHighlighter 0.3s ease;
-}
-
-@keyframes inputHighlighter {
-  from {
-    background: #031765;
-  }
-
-  to {
-    width: 1px;
-  }
 }
