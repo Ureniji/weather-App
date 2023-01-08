@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>WeatherApp</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,30 +19,30 @@
   </head>
   <body>
     <div class="background mt-3">
-      <div class="weather container px-4 pb-1 pt-1 rounded">
+      <div class="weather container px-4 pt-1 pb-1 rounded">
         <!--  -->
         <form id="search-form">
-          <div class="row mt-1 mb-3">
+          <div class="row mb-4">
             <!-- input field -->
             <div class="col-4 p-0">
               <input
-                class="form-control text-white border-0 border-bottom rounded-0 fs-5"
+                class="form-control border-0 border-bottom border-warning rounded-0 fs-5"
                 type="text"
                 style="background: rgba(255, 255, 255, 0)"
                 id="city-input"
                 autofocus="off"
-                autocomplete="off"  
+                autocomplete="off"
               />
             </div>
             <!-- search btn -->
             <div class="col-2 p-0">
-              <button type="submit" class="btn p-0">
+              <button type="submit" class="btn p-0 pt-2">
                 <i
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
                     height="20"
-                    color="white"
+                    color="#a91114"
                     fill="currentColor"
                     class="bi bi-search mt-2"
                     viewBox="0 0 20 20"
@@ -55,25 +58,28 @@
         <!--  main-weather-content -->
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-sm-5 main-weather-icon">
-              <h5 id="city" class="city mt-4 fw-bolder text-center text-light"></h5>
+            <div class="col-5 p-0 main-weather-icon">
+              <h5
+                id="city"
+                class="city mt-4 fw-bolder text-center fs-3 text-white"
+              ></h5>
               <img class="center-block mt-1" id="icon" />
             </div>
             <!-- current location and temp -->
-            <div class="col-auto city text-center rounded">
+            <div class="col-sm p-0 city text-center rounded">
               <div class="mb-0">
-                <strong id="temperature" class="temp-size font-monospace"></strong>
+                <strong
+                  id="temperature"
+                  class="temp-size font-monospace"
+                ></strong>
                 <span class="units">°C</span>
               </div>
-              <div id="description" class=""></div>
+              <div id="description" class="fw-light"></div>
               <div class="svg-icon">
-                <svg src="src/img/Icons/temperature_max.png"  height="10%" width="10%" viewBox="0 0 120 120">
-                </svg>
-
                 <img
                   src="src/img/Icons/temperature_max.svg"
                   alt="temp-difference"
-                  class="temp-difference shadow-lg"
+                  class="temp-difference"
                 />
                 <span> Max.</span>
                 <span id="temperature_max" class="pe-4"></span>
@@ -85,24 +91,22 @@
                 <span class=""> Min.</span>
                 <span id="temperature_min"></span>
               </div>
-              <h6 id="time-1"></h6>
-              <h6 id="date" class="font-monospace""></h6>
+              <h6 id="date" class="font-monospace fs-5"></h6>
             </div>
           </div>
         </div>
         <!-- dropdown menu -->
         <button
           type="button"
-          style="color: #fff"
-          class="btn dropdown-toggle dropdown-toggle-collapse dropdown-toggle-split pt-3"
+          style="color: #0358a0"
+          class="btn dropdown-toggle dropdown-toggle-collapse p-0 m-0 dropdown-toggle-split pt-1 fs-4"
           data-bs-toggle="collapse"
           data-bs-target="#collapseExample"
-        ></button>        <!-- forecast weather content -->
+        ></button>
+        <!-- forecast weather content -->
         <div class="collapse" id="collapseExample">
-          <div class="forecast mb-4 rounded fw-bold" id="forecast">
-          </div>
+          <div class="forecast rounded fw-bold" id="forecast"></div>
         </div>
-        
       </div>
     </div>
     <script

@@ -1,13 +1,14 @@
 body {
-  /* background-image: url(/src/img/bg/great-sky.jpg); */
-  background-color: grey;
+  background-color: rgb(129, 132, 142);
   height: 100%;
   overflow: hidden;
   margin: 0;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+button:focus {
   box-shadow: 0 0 0 rgb(255, 255, 255);
+  color: #0358a0;
 }
 
 .center-block {
@@ -28,21 +29,18 @@ input[type="text"]:focus {
   max-height: 700px;
   backdrop-filter: blur(10px) rgba(255, 255, 255, 0.25);
   -webkit-backdrop-filter: blur(15px);
-  box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.35),
-    2px 2px 5px rgba(0, 0, 0, 0.3), 10px 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.35),
+    3px 3px 5px rgba(0, 0, 0, 0.35), 30px 15px 20px rgba(0, 0, 0, 0.35);
 }
 
 .main-weather-icon img {
   height: 200px;
   width: 200px;
 }
-.active {
-  cursor: default;
-  color: black;
-}
+
 .temp-size,
 .date .temp-size {
-  font-size: 50px;
+  font-size: 80px;
 }
 .temp-difference {
   height: 30px;
