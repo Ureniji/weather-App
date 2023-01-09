@@ -57,16 +57,14 @@
         </form>
         <!--  main-weather-content -->
         <div class="container">
-          <div class="row text-center">  
-            <div class="col-5-xs-1 center-block text-center p-0 main-weather-icon"><!-- combination of all three positioning items is because I have col with img and text following -->
-              <h5
-                id="city"
-                class="city mt-4 fw-bolder fs-3 text-white"
-              ></h5>
+          <div class="row text-center">
+            <div class="col-sm center-block text-center p-0 main-weather-icon">
+              <!-- combination of all three positioning items is because I have col with img and text following -->
+              <h5 id="city" class="city fw-bolder fs-3 text-white"></h5>
               <img class="center-block" id="icon" />
             </div>
             <!-- current location and temp -->
-            <div class="col-sm p-0 city rounded">
+            <div class="col p-0 city rounded">
               <div class="mb-0">
                 <strong
                   id="temperature"
@@ -82,7 +80,7 @@
                   class="temp-difference"
                 />
                 <span> Max.</span>
-                <span id="temperature_max" class="pe-4"></span>
+                <span id="temperature_max" class="pe-5"></span>
                 <img
                   src="src/img/Icons/temperature_min.svg"
                   alt="temp-difference"
@@ -99,7 +97,7 @@
         <button
           type="button"
           style="color: #0358a0"
-          class="btn dropdown-toggle dropdown-toggle-collapse p-0 m-0 dropdown-toggle-split pt-1 fs-4"
+          class="btn dropdown-toggle dropdown-toggle-collapse p-0 m-0 dropdown-toggle-split pt-1 fs-5"
           data-bs-toggle="collapse"
           data-bs-target="#collapseExample"
         ></button>

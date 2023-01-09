@@ -22,7 +22,7 @@ button:focus {
 }
 .weather {
   max-width: 600px;
-  max-height: 700px;
+  max-height: 800px;
   backdrop-filter: blur(10px) rgba(255, 255, 255, 0.25);
   -webkit-backdrop-filter: blur(15px);
   box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.35),
@@ -30,8 +30,8 @@ button:focus {
 }
 
 .main-weather-icon img {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 170px;
 }
 
 .temp-size,
