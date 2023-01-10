@@ -18,13 +18,13 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="container background mt-5">
-      <div class="weather container rounded ps-4">
+    <div class="background mt-3">
+      <div class="weather container pt-0 p-2 rounded">
         <!--  -->
         <form id="search-form">
           <div class="row mb-4">
             <!-- input field -->
-            <div class="col-4 col-lg-6 pe-0">
+            <div class="col-4 pe-0">
               <input
                 class="form-control border-0 border-bottom border-warning rounded-0 fs-5"
                 type="text"
@@ -58,65 +58,51 @@
         <!--  main-weather-content -->
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-4 col-lg-3 mx-auto main-weather-icon">
+            <div class="col-5 mx-auto main-weather-icon">
               <h5
                 id="city"
                 class="city fw-bolder text-center pb-3 fs-3 text-white"
               ></h5>
-              <img class="center-block img-fluid" id="icon" />
+              <img class="center-block" id="icon" />
             </div>
             <!-- current location and temp -->
-            <div class="col-7 col-lg-6 p-0 mt-3 city text-center rounded">
-              <div class="text-center">
+            <div class="col-sm p-0 city text-center rounded">
+              <div class="mb-0 text-center">
                 <strong
                   id="temperature"
                   class="temp-size font-monospace"
                 ></strong>
-                <span class="units">°C</span> <br>
-                <span id="description" class="fw-light m-0"></span>
+                <span class="units">°C</span>
               </div>
-              <div class="row justify-content-center">
-                <div class="col-5 ms-0 p-0">
-                  <img
+              <div id="description" class="fw-light"></div>
+              <div class="svg-icon">
+                <img
                   src="src/img/Icons/temperature_max.svg"
                   alt="temp-difference"
                   class="temp-difference"
                 />
-                <span>Max.</span><span id="temperature_max"></span>
-                </div>
-                <div class="col-5 me-0 p-0">
-                  <img
+                <span> Max.</span>
+                <span id="temperature_max" class="pe-5"></span>
+                <img
                   src="src/img/Icons/temperature_min.svg"
                   alt="temp-difference"
                   class="temp-difference"
                 />
-                <span> Min.</span>
+                <span class=""> Min.</span>
                 <span id="temperature_min"></span>
-                </div>
               </div>
-
-              <div class="row"><div class="col-sm-text-center">
-                <h6 id="date" class="font-monospace fs-5 mt-0">
-              </h6>
-              </div></div>
-
-              <h6 id="date" class="font-monospace fs-5 mt-0">
-                <span></span><span></span><span></span>
-              </h6>
-
+              <h6 id="date" class="font-monospace fs-5 mt-0"></h6>
             </div>
           </div>
         </div>
         <!-- dropdown menu -->
-       <div class="row"><div class="col-sm-1 text-center mt-2">
-         <button
+        <button
           type="button"
           style="color: #0358a0"
-          class="btn dropdown-toggle dropdown-toggle-collapse p-0 dropdown-toggle-split fs-5"
+          class="btn dropdown-toggle dropdown-toggle-collapse p-0 m-0 dropdown-toggle-split pt-1 fs-5"
           data-bs-toggle="collapse"
           data-bs-target="#collapseExample"
         ></button>
-       </div></div>
         <!-- forecast weather content -->
         <div class="collapse" id="collapseExample">
           <div class="forecast rounded fw-bold" id="forecast"></div>
