@@ -56,6 +56,7 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="container dropdown"><div class="row mx-auto">`; // storing the HTML content
   forecast.forEach(function (forecastDay, index) {
+    for (let index = 1; index.lenght; index++) return index;
     if (index < 6) {
       forecastHTML += `
     <div class="col-2 text-center py-3">
