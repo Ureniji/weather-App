@@ -54,11 +54,11 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row d-flex align-items-center pb-1">`; // storing the HTML content
+  let forecastHTML = `<div class="container dropdown"><div class="row mx-auto">`; // storing the HTML content
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML += `
-    <div class="col-2 text-center">
+    <div class="col-2 text-center py-3">
         <div class="forecast-day border-right border-left">${formatDay(
           forecastDay.dt
         )}</div>
@@ -67,21 +67,26 @@ function displayForecast(response) {
             alt="forecast-icon"
             style="height: 54px;
             width: 54px;"
-            class="forecast-icon my-2"/>
-              <div class="weather-forecast-temperature" style="font-size:15px;">
-                <span class="forecastTemperatureMax">${Math.round(
-                  forecastDay.temp.max
-                )}
-                <span class="forecastTemperatureMin opacity-50 ps-2">${Math.round(
-                  forecastDay.temp.min
-                )}°</span>
-              </div>
+            class="forecast-icon img-fluid"/>
+             <div class="row">
+             <div class="col-1">
+              <span class="forecastTemperatureMax">${Math.round(
+                forecastDay.temp.max
+              )}
+                
+             </div>
+             <div class="col-1">
+             <span class="forecastTemperatureMin opacity-50">${Math.round(
+               forecastDay.temp.min
+             )}°</span>
+             </div>
+             </div>
           </div>
       `;
     }
   });
 
-  forecastHTML = forecastHTML + `</div>`;
+  forecastHTML = forecastHTML + `</div></div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 

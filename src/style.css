@@ -13,6 +13,9 @@ a {
   box-shadow: 0 0 0 rgb(255, 255, 255);
   color: #0358a0;
 }
+.dropdown-toggle {
+  margin: 0 auto;
+}
 
 .background {
   background-size: cover;
@@ -23,8 +26,8 @@ a {
   box-sizing: border-box;
 }
 .weather {
-  max-width: 600px;
-  max-height: 700px;
+  max-width: 500px;
+  max-height: 600px;
   backdrop-filter: blur(10px) rgba(255, 255, 255, 0.25);
   -webkit-backdrop-filter: blur(15px);
   box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.35),
@@ -56,4 +59,13 @@ a {
 }
 .blockquote-footer:hover {
   color: black;
+}
+
+@media (max-height: 800px) {
+  .dropdown-menu {
+    height: 100%;
+  }
+  .dropdown {
+    position: relative;
+  }
 }
