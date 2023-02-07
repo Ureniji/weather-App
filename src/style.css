@@ -25,10 +25,10 @@ a {
 .weather {
   max-width: 700px;
   max-height: 600px;
-  backdrop-filter: blur(10px) rgba(255, 255, 255, 0.05);
-  -webkit-backdrop-filter: blur(15px);
-  box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.15),
-    5px 5px 5px rgba(0, 0, 0, 0.15), 30px 15px 20px rgba(0, 0, 0, 0.15);
+  /* backdrop-filter: blur(10px) rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(15px); */
+  box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.35),
+    5px 5px 5px rgba(0, 0, 0, 0.15), 3px 5px 10px rgba(0, 0, 0, 0.15);
 }
 .main-weather-icon {
   height: 170px;
