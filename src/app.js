@@ -45,7 +45,7 @@ function getForecast(coordinates) {
 function formatDay(forecastStamp) {
   let date = new Date(forecastStamp * 1000); //
   let day = date.getDay();
-  let days = ["So.", "Mo.", "Di.", "Mi.", "Di.", "Fr.", "Sa."];
+  let days = ["So.", "Mo.", "Di.", "Mi.", "Do.", "Fr.", "Sa."];
   return days[day];
 }
 
@@ -54,20 +54,20 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="container dropdown"><div class="row mx-auto">`; // storing the HTML content
+  let forecastHTML = `<div class="container dropdown p-0"><div class="row mx-auto">`; // storing the HTML content
   forecast.forEach(function (forecastDay, index) {
-    for (let index = 1; index.lenght; index++) return index;
-    if (index < 6) {
+    for (let index = +1; index.lenght + 1; index++) return index;
+    if (index >= 1 && index < 7) {
       forecastHTML += `
-    <div class="col-2 text-center py-3">
+    <div class="col-2 p-1 text-center">
         <div class="forecast-day border-right border-left">${formatDay(
           forecastDay.dt
         )}</div>
            <img
             src="src/img/Icons/${forecastDay.weather[0].icon}.svg"
             alt="forecast-icon"
-            style="height: 54px;
-            width: 54px;"
+            style="height: 60px;
+            width: 60px;"
             class="forecast-icon img-fluid"/>
              <div class="row">
              <div class="col-1">

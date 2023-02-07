@@ -1,9 +1,6 @@
 body {
-  background-color: rgb(182, 183, 186);
-  height: 100%;
-  overflow: hidden;
-  margin: 0 auto;
-  display: block;
+  background-color: hsl(225, 3%, 72%);
+  justify-content: center;
   position: relative;
 }
 
@@ -26,12 +23,12 @@ a {
   box-sizing: border-box;
 }
 .weather {
-  max-width: 500px;
+  max-width: 700px;
   max-height: 600px;
-  backdrop-filter: blur(10px) rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px) rgba(255, 255, 255, 0.05);
   -webkit-backdrop-filter: blur(15px);
-  box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.35),
-    5px 5px 5px rgba(0, 0, 0, 0.35), 30px 15px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.15),
+    5px 5px 5px rgba(0, 0, 0, 0.15), 30px 15px 20px rgba(0, 0, 0, 0.15);
 }
 .main-weather-icon {
   height: 170px;
@@ -61,11 +58,20 @@ a {
   color: black;
 }
 
-@media (max-height: 800px) {
-  .dropdown-menu {
-    height: 100%;
+@media (max-width: 576px) {
+  .weather {
+    width: 95%;
+    max-height: 100%;
   }
-  .dropdown {
-    position: relative;
+  .temp-size,
+  .date .temp-size {
+    font-size: 50px;
+    margin: 20px auto;
   }
+  .forecast-icon {
+    margin: 0 auto;
+  }
+  /* .collapse {
+    max-height: calc(50% -200px);
+  } */
 }
