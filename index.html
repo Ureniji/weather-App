@@ -21,22 +21,20 @@
     <div class="background mt-5">
       <div class="weather container rounded">
         <!--  -->
-        <form id="search-form">
-          <div class="row mb-4">
+        <form id="search-form" class="search-bar">
+          <div class="row">
             <!-- input field -->
-            <div class="col-4 pe-0">
+            <div class="col search">
               <input
-                class="form-control border-0 border-bottom border-warning rounded-0 fs-5"
+                class="search-input form-control"
                 type="text"
-                style="background: rgba(255, 255, 255, 0)"
                 id="city-input"
-                autofocus="off"
-                autocomplete="off"
+               
               />
             </div>
             <!-- search btn -->
-            <div class="col-2 p-0">
-              <button type="submit" class="btn p-0 pt-2">
+            <div class="col-2">
+              <button type="submit" class="btn search-submit">
                 <i
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +42,7 @@
                     height="20"
                     color="#a91114"
                     fill="currentColor"
-                    class="bi bi-search mt-2"
+                    class="bi bi-search p-0"
                     viewBox="0 0 20 20"
                   >
                     <path
@@ -100,7 +98,7 @@
         <button
           type="button"
           style="color: #0358a0"
-          class="btn dropdown-toggle dropdown-toggle-collapse p-0 m-0 dropdown-toggle-split pt-1 fs-5"
+          class="btn dropdown-toggle dropdown-toggle-collapse pt-1 fs-5"
           data-bs-toggle="collapse"
           data-bs-target="#collapseExample"
         ></button>
