@@ -1,14 +1,7 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
   background-color: hsl(225, 3%, 72%);
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 input[type="text"]:focus,
