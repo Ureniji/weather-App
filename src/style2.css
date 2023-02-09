@@ -64,6 +64,7 @@ body {
 .search-input:focus-within {
   opacity: 1;
   margin-right: 0;
+  padding-left: 30px;
   font-weight: 900;
   color: hsl(0, 50%, 100%);
   font-size: larger;
@@ -76,8 +77,9 @@ body {
     height: 100%;
     font-size: 80%;
   }
+
   .content {
-    width: 70vw;
+    width: 50vw;
     display: block;
     margin: 0 auto;
     margin-top: 3vh;
