@@ -3,6 +3,9 @@
 *::after {
   box-sizing: border-box;
 }
+::root {
+  --accent-crl-blue: hsl(208, 96%, 32%);
+}
 
 body {
   background: hsl(0, 0%, 70%);
@@ -21,16 +24,16 @@ body {
   border-radius: 10px;
 }
 .content {
-  width: 42vw;
+  position: relative;
+  width: 70vw;
   margin-top: 3vh;
   margin-left: 3vw;
-  position: relative;
 }
 .search {
+  position: relative;
   width: 50px;
   height: 50px;
   padding-left: 20px;
-  position: relative;
   display: flex;
   overflow: hidden;
   transition: width 400ms cubic-bezier(0.15, 0.92, 0.18, 1.14);
@@ -40,12 +43,14 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  outline: 0;
+  border-radius: 0;
   border: 0;
   /* padding-left: 10px; */
   font-size: 1em;
   cursor: pointer;
   opacity: 0;
+  outline: 0;
+  border-bottom: 2px solid green;
 }
 
 .search-submit {
@@ -79,10 +84,13 @@ body {
   }
 
   .content {
-    width: 50vw;
+    /* min-width: 60px; */
     display: block;
     margin: 0 auto;
     margin-top: 3vh;
-    font-size: 1.2em;
+    font-size: 1em;
+  }
+  .search-input {
+    /* min-width: 10px; */
   }
 }

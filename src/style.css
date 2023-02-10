@@ -8,7 +8,7 @@ input[type="text"]:focus,
 button:focus,
 a {
   box-shadow: 0 0 0 rgb(255, 255, 255);
-  color: #0358a0;
+  color: hsl(208, 96%, 32%);
 }
 .dropdown-toggle {
   margin: 0 auto;
@@ -70,7 +70,8 @@ a {
   color: transparent;
 }
 .blockquote-footer:hover {
-  color: black;
+                    color="#a91114"
+  color: ;
 }
 
 @media (max-width: 576px) {
