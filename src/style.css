@@ -70,8 +70,7 @@ a {
   color: transparent;
 }
 .blockquote-footer:hover {
-                    color="#a91114"
-  color: ;
+  color: hsl(359, 82%, 36%);
 }
 
 @media (max-width: 576px) {
