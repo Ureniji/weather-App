@@ -107,6 +107,7 @@ li {
 }
 @media (max-width: 576px) {
   .weather {
+    text-align: center;
     width: 95%;
     height: 95%;
     background-color: lightblue;
@@ -126,6 +127,15 @@ li {
   .main-content > * {
     display: block;
     margin: 0 auto;
+  }
+  .temperature-difference {
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+  }
+  .temperature-difference li {
+    padding: 0;
+    justify-content: center;
   }
   .place {
     color: white;
