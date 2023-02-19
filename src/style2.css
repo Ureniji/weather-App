@@ -35,10 +35,10 @@ li {
 .header-content {
   position: relative;
   width: 20vw;
-  margin-top: 3vh;
+  margin-top: 2vh;
   font-size: 1.3rem;
 }
-
+/* search-bar content */
 .search {
   position: relative;
   width: 50px;
@@ -83,61 +83,65 @@ li {
   color: hsl(0, 50%, 100%);
   background: transparent;
 }
+/* weather-content */
 .main-content {
   display: flex;
-  flex-direction: row;
+  gap: 2rem;
 }
 .main-weather-icon {
-  width: 170px;
-  height: 170px;
+  margin-top: 20px;
+  width: 150px;
+  height: 150px;
 }
+
+.weather-details {
+  text-align: center;
+}
+
 .temperature-difference {
   display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 0;
 }
-.temperature-max-icon,
-.temperature-min-icon {
-  list-style: none;
-  width: 20px;
+
+.temperature-max::before,
+.temperature-min::before {
+  content: "";
+  display: block;
   height: 20px;
+  width: 20px;
+  float: left;
 }
-@media (max-width: 720px) {
-  .header-content {
-    width: 22vw;
-  }
+
+.temperature-max::before {
+  background: url(/src/img/Icons/temperature_max.svg) no-repeat;
 }
+.temperature-min::before {
+  background: url(/src/img/Icons/temperature_min.svg) no-repeat;
+}
+
 @media (max-width: 576px) {
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
   .weather {
-    text-align: center;
-    width: 95%;
-    height: 95%;
-    background-color: lightblue;
+    /* width: 95%;
+    height: 95%; */
+    background: rgb(200, 131, 131);
   }
   .header-content {
-    position: relative;
     width: 32vw;
     display: block;
     margin: 0 auto;
-    margin-top: 3vh;
+    margin-top: 2vh;
+    font-size: 1.2em;
   }
   .main-content {
     display: flex;
     flex-direction: column;
-    margin-top: 3vh;
-  }
-  .main-content > * {
-    display: block;
-    margin: 0 auto;
-  }
-  .temperature-difference {
-    padding: 0;
-    display: flex;
-    gap: 2rem;
-  }
-  .temperature-difference li {
-    padding: 0;
-    justify-content: center;
-  }
-  .place {
-    color: white;
+    gap: 0.5rem;
   }
 }

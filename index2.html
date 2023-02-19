@@ -39,32 +39,23 @@
         <section class="main-content">
           <img src="/src/img/Icons/02d.svg" alt=main-weather-icon"
           class="main-weather-icon">
-          <h5 class="place" id="city"></h5>
-        </section>
-        <section class="temperature">
-          <div class="main-temperature">
-            <strong id="temperature"></strong><span class="unit">°C</span>
+          <div class="weather-details">
+            <h2 class="main-temperature">
+              <strong id="temperature">18</strong><span class="unit">°C</span>
+            </h2>
+            <h5 class="place" id="city">berlin</h5>
+            <div class="weather-description">Lorem, ipsum dolor sit a</div>
+            <ul class="temperature-difference">
+              <li class="temperature-max">
+                <span>Max</span>
+              </li>
+              <li class="temperature-min">
+                <span>Min</span>
+              </li>
+            </ul>
           </div>
-          <div class="weather-description"></div>
-          <ul class="temperature-difference">
-            <li class="temperaure-max">
-              <img
-                src="/src/img/Icons/temperature_max.svg"
-                alt="icon-high-temperature"
-                class="temperature-max-icon"
-              />
-              <span>Max.</span>
-            </li>
-            <li class="temperaure-min">
-              <img
-                src="/src/img/Icons/temperature_min.svg"
-                alt="icon-high-temperature"
-                class="temperature-min-icon"
-              />
-              <span>Min.</span>
-            </li>
-          </ul>
         </section>
+        <section class="temperature"></section>
       </main>
     </div>
   </body>
