@@ -24,8 +24,8 @@ li {
 .weather {
   position: relative;
   margin-top: 20px;
-  max-width: 600px;
-  max-height: 800px;
+  max-width: 500px;
+  max-height: 700px;
   box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.24),
     2px 2px 5px rgba(0, 0, 0, 0.2), 5px 5px 5px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -56,7 +56,7 @@ li {
   cursor: pointer;
   opacity: 0;
   outline: 0;
-  border-bottom: 2px solid hsl(208, 96%, 32%);
+  border-bottom: 1px solid hsl(208, 96%, 32%);
 }
 
 .search-submit {
@@ -121,27 +121,51 @@ li {
   background: url(/src/img/Icons/temperature_min.svg) no-repeat;
 }
 
+.dropdown-toggle {
+  border: 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  background: transparent;
+  outline: 0;
+  color: hsl(49, 100%, 51%);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.dropdown-toggle:hover {
+  color: hsl(49, 100%, 80%);
+}
+.dropdown-toggle {
+  box-shadow: 0 0 0 0.2;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  border-radius: 0.3rem;
+}
+
 @media (max-width: 576px) {
+  .weather {
+    background: rgb(200, 131, 131);
+  }
   img {
     display: block;
     margin: 0 auto;
   }
-
-  .weather {
-    /* width: 95%;
-    height: 95%; */
-    background: rgb(200, 131, 131);
+  h2,
+  h5 {
+    padding: 0;
+    margin: 0;
   }
+
   .header-content {
-    width: 32vw;
+    width: 30vw;
     display: block;
     margin: 0 auto;
     margin-top: 2vh;
-    font-size: 1.2em;
+    font-size: 1em;
   }
   .main-content {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 }
