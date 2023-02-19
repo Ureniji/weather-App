@@ -11,27 +11,64 @@ function formatDate(date) {
   ];
   let monthIndex = date.getMonth();
   let months = [
-    "Januar",
-    "Februar",
-    "März",
-    "April",
+    "Jan.",
+    "Feb.",
+    "Mär.",
+    "Apr.",
     "Mai",
-    "Juni",
-    "Juli",
-    "August",
-    "September",
-    "Oktober",
-    "November",
-    "Dezember",
+    "Jun.",
+    "Jul.",
+    "Aug.",
+    "Sept.",
+    "Okt.",
+    "Nov.",
+    "Dez.",
   ];
   let month = months[monthIndex];
   let day = days[dayIndex];
   let Date = date.getDate();
   let year = date.getFullYear();
   console.log(currentTime);
-  return `${day}, den ${Date} ${month} ${year} `;
+  return `${day}, ${Date} ${month} ${year} `;
 }
+
+// const clock = setInterval(function now() {
+//   let currentTime = new Date();
+//   let hr = currentTime.getHours();
+//   if (hr < 10) hr = `0${hr}`;
+
+//   let min = currentTime.getMinutes();
+//   if (min < 10) min = `0${min}`;
+
+//   let sec = currentTime.getSeconds();
+//   if (sec < 10) sec = `0${sec}`;
+//   hour.textContent = hr;
+//   minutes.textContent = min;
+//   seconds.textContent = sec;
+//   return `${hr}${min}${sec}`;
+// }, 1000);
+
+function update(time) {
+  console.log(time);
+  const currentTime = new Date();
+  const hr = currentTime.getHours();
+  const min = currentTime.getMinutes();
+  const sec = currentTime.getSeconds();
+
+  if (hr < 10) hr = `0${hr}`;
+  if (min < 10) min = `0${min}`;
+  if (sec < 10) sec = `0${sec}`;
+  hour.textContent = hr;
+  minutes.textContent = min;
+  seconds.textContent = sec;
+  window.requestAnimationFrame(update);
+}
+window.requestAnimationFrame(update);
+
+const hour = document.querySelector("#hour");
+const minutes = document.querySelector("#minutes");
+const seconds = document.querySelector("#seconds");
 
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
-dateElement.innerHTML = formatDate(currentTime);
+dateElement.textContent = formatDate(currentTime);

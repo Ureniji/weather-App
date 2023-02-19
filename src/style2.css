@@ -120,9 +120,11 @@ li {
 .temperature-min::before {
   background: url(/src/img/Icons/temperature_min.svg) no-repeat;
 }
-.time {
-  font-size: 0.9em;
-  text-align: center;
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dropdown {
@@ -165,6 +167,11 @@ li {
     flex-direction: column;
     gap: 1rem;
   }
+  .currentDate {
+    font-size: 0.9em;
+    text-align: center;
+  }
+
   .dropdown {
     text-align: center;
   }
