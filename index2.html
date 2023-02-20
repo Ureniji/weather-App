@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,7 +18,8 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/src/style2.css" />
-    <script  defer src="/src/app2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script defer src="/src/app2.js"></script>
     <title>weather</title>
   </head>
   <body>
@@ -48,29 +49,27 @@
           <img src="/src/img/Icons/02d.svg" alt=main-weather-icon"
           class="main-weather-icon">
           <div class="weather-details">
-            <h2 class="main-temperature">
-              <strong id="temperature">18</strong><span class="unit">°C</span>
-            </h2>
-            <h5 class="place" id="city">berlin</h5>
+            <strong
+              ><h2 class="main-temperature" id="temperature"></h2>
+            </strong>
+            <h5 class="place" id="city"></h5>
             <div class="weather-description">Lorem, ipsum dolor sit a</div>
             <ul class="temperature-difference">
-              <li class="temperature-max">
-                <span>Max</span>
-              </li>
-              <li class="temperature-min">
-                <span>Min</span>
-              </li>
+              <span class="temperature-max">Max</span>
+              <li id="temperature-max"></li>
+              <span class="temperature-max">Min</span>
+              <li id="temperature-min"></li>
             </ul>
-          </div>
-        </section>
-        <section class="currentTimeAndDate">
-          <h6 class="currentDate" id="date"></h6>
-          <div class="clock">
-            <div id="hours">00</div>
-            <span>:</span>
-            <div id="minutes">00</div>
-            <span>:</span>
-            <div id="seconds">00</div>
+            <div class="currentTimeAndDate">
+              <div class="clock">
+                <div id="hours">00</div>
+                <span>:</span>
+                <div id="minutes">00</div>
+                <span>:</span>
+                <div id="seconds">00</div>
+              </div>
+              <h6 class="currentDate" id="date"></h6>
+            </div>
           </div>
         </section>
         <section class="dropdown">

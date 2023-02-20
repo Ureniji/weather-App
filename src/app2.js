@@ -28,7 +28,6 @@ function formatDate(date) {
   let day = days[dayIndex];
   let Date = date.getDate();
   let year = date.getFullYear();
-  console.log(currentTime);
   return `${day}, ${Date} ${month} ${year} `;
 }
 
@@ -47,6 +46,8 @@ const clock = setInterval(function now() {
   seconds.textContent = sec;
 }, 1000);
 
+// clock isn't running a full circle after seconds reach 59 with window.requestAnimationFrame
+//  -> Reason behind this is:
 // function update(time) {
 //   console.log(time);
 //   const currentTime = new Date();
@@ -64,6 +65,34 @@ const clock = setInterval(function now() {
 // }
 // window.requestAnimationFrame(update);
 
+function displayWeatherDetails(response) {
+  let cityElement = document.querySelector("#city");
+  let temperatureElement = document.querySelector("#temperature");
+  let temperatureMaxElement = document.querySelector("#temperature-max");
+  cityElement.textContent = response.data.name;
+  temperatureElement.textContent = `${Math.round(response.data.main.temp)}°`;
+  temperatureMaxElement.textContent = ` ${Math.round(
+    response.data.main.temp_max
+  )}°`;
+
+  console.log(response);
+}
+
+function searchCity(city) {
+  let apiKey = "aa09763d916df0424c840d55bfc2d2c9";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=de&appid=aa09763d916df0424c840d55bfc2d2c9&units=metric`;
+  axios.get(apiUrl).then(displayWeatherDetails);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  city(city);
+}
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("click", handleSubmit);
+
 let hours = document.querySelector("#hours");
 let minutes = document.querySelector("#minutes");
 let seconds = document.querySelector("#seconds");
@@ -71,3 +100,5 @@ let seconds = document.querySelector("#seconds");
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.textContent = formatDate(currentTime);
+
+searchCity("berlin");
