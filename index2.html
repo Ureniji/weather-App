@@ -46,18 +46,18 @@
       <!--  -->
       <main class="container-weather">
         <section class="main-content">
-          <img src="/src/img/Icons/02d.svg" alt=main-weather-icon"
-          class="main-weather-icon">
+          <img class="main-weather-icon" alt=mainweathericon"
+          id="main-weather-icon">
           <div class="weather-details">
             <strong
               ><h2 class="main-temperature" id="temperature"></h2>
             </strong>
             <h5 class="place" id="city"></h5>
-            <div class="weather-description">Lorem, ipsum dolor sit a</div>
+            <div id="weather-description"></div>
             <ul class="temperature-difference">
-              <span class="temperature-max">Max</span>
+              <span class="temperature-max">Max:</span>
               <li id="temperature-max"></li>
-              <span class="temperature-max">Min</span>
+              <span class="temperature-min">Min:</span>
               <li id="temperature-min"></li>
             </ul>
             <div class="currentTimeAndDate">
@@ -76,7 +76,7 @@
           <button class="dropdown">
             <i class="fa fa-caret-down" aria-hidden="true"></i>
           </button>
-          <div class="collapse"></div>
+          <div class="collapse" id="collapseExample"></div>
         </section>
       </main>
     </div>

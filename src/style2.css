@@ -125,13 +125,12 @@ h5 {
   height: 20px;
   width: 20px;
   float: left;
-  line-height: 0;
 }
 .temperature-max::before {
   background: url(/src/img/Icons/temperature_max.svg) no-repeat;
 }
 .temperature-min::before {
-  margin-left: 10px;
+  margin-left: 20px;
   background: url(/src/img/Icons/temperature_min.svg) no-repeat;
 }
 

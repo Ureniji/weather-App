@@ -69,17 +69,27 @@ function displayWeatherDetails(response) {
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
   let temperatureMaxElement = document.querySelector("#temperature-max");
+  let temperatureMinElement = document.querySelector("#temperature-min");
+  let descriptionElement = document.querySelector("#weather-description");
+  let iconElement = document.querySelector("#main-weather-icon");
+
   cityElement.textContent = response.data.name;
   temperatureElement.textContent = `${Math.round(response.data.main.temp)}°`;
   temperatureMaxElement.textContent = ` ${Math.round(
     response.data.main.temp_max
   )}°`;
-
+  temperatureMinElement.textContent = `${Math.round(
+    response.data.main.temp_min
+  )}°`;
+  descriptionElement.textContent = response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `src/img/Icons/${response.data.weather[0].icon}.svg`
+  );
   console.log(response);
 }
 
 function searchCity(city) {
-  let apiKey = "aa09763d916df0424c840d55bfc2d2c9";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=de&appid=aa09763d916df0424c840d55bfc2d2c9&units=metric`;
   axios.get(apiUrl).then(displayWeatherDetails);
 }
@@ -89,6 +99,32 @@ function handleSubmit(event) {
   let city = document.querySelector("#city-input").value;
   city(city);
 }
+function getForecast(response) {
+  console.log(response);
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&lang=de&appid=21a61edab25ec99fdc0f38dd9a3013d7&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+// function displayForecast(response) {
+//   console.log(response.data);
+//   let forecast = response.data.daily;
+//   let forecastElement = document.querySelector("#forecast");
+
+//   let forecastHTML = `<div class="forecast" id="forecast">`;
+//   forecast.forEach(function (forecastDAy,index){
+//     for (let index = +1; index++) return index;
+//     if (index >= 1 && undex <7) {
+//       forecastHTML +=
+//     }
+//   })
+//               `<div class="container dropdown">
+//                 <div><div class="forecast-day"></div></div>
+//               </div>
+//             </div>`;
+// }
+
+// // creating a global variable
+// // its empty in the beginning, but after it gets a response from the API
+// let celciusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("click", handleSubmit);
