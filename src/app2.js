@@ -97,7 +97,7 @@ function searchCity(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
-  city(city);
+  searchCity(city);
 }
 function getForecast(response) {
   console.log(response);
