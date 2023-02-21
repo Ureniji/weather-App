@@ -104,27 +104,48 @@ function getForecast(response) {
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&lang=de&appid=21a61edab25ec99fdc0f38dd9a3013d7&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
-// function displayForecast(response) {
-//   console.log(response.data);
-//   let forecast = response.data.daily;
-//   let forecastElement = document.querySelector("#forecast");
 
-//   let forecastHTML = `<div class="forecast" id="forecast">`;
-//   forecast.forEach(function (forecastDAy,index){
-//     for (let index = +1; index++) return index;
-//     if (index >= 1 && undex <7) {
-//       forecastHTML +=
-//     }
-//   })
-//               `<div class="container dropdown">
-//                 <div><div class="forecast-day"></div></div>
-//               </div>
-//             </div>`;
-// }
+function displayForecast(response) {
+  console.log(response.data);
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
 
-// // creating a global variable
-// // its empty in the beginning, but after it gets a response from the API
-// let celciusTemperature = null;
+  let forecastHTML = `<div class="container dropdown p-0"><div class="row mx-auto">`; // storing the HTML content
+  forecast.forEach(function (forecastDay, index) {
+    for (let index = +1; index.lenght + 1; index++) return index;
+    if (index >= 1 && index < 7) {
+      forecastHTML += `
+    <div class="col-2 p-1 text-center">
+        <div class="forecast-day border-right border-left">${formatDay(
+          forecastDay.dt
+        )}</div>
+           <img
+            src="src/img/Icons/${forecastDay.weather[0].icon}.svg"
+            alt="forecast-icon"
+            style="height: 60px;
+            width: 60px;"
+            class="forecast-icon img-fluid"/>
+             <div class="row">
+             <div class="col-1">
+              <span class="forecastTemperatureMax">${Math.round(
+                forecastDay.temp.max
+              )}
+                
+             </div>
+             <div class="col-1">
+             <span class="forecastTemperatureMin opacity-50">${Math.round(
+               forecastDay.temp.min
+             )}°</span>
+             </div>
+             </div>
+          </div>
+      `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div></div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("click", handleSubmit);
