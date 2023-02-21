@@ -165,7 +165,28 @@ p {
   color: hsl(49, 100%, 80%);
 }
 .dropdown-content {
+  position: relative;
   padding: 10px;
+  height: 10vh;
+}
+.forecast-day {
+  padding: 0;
+  text-align: center;
+}
+.forecast-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.forecast-temp {
+  display: flex;
+  gap: 0.5rem;
+}
+.forecast-temp-min {
+  margin-left: auto;
+}
+.forecast-temp-max {
+  margin-right: auto;
 }
 
 @media (max-width: 576px) {

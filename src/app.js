@@ -43,7 +43,7 @@ function getForecast(coordinates) {
 }
 
 function formatDay(forecastStamp) {
-  let date = new Date(forecastStamp * 1000); //
+  let date = new Date(forecastStamp * 1000); // warum mussten wir hier *1000 rechnen?
   let day = date.getDay();
   let days = ["So.", "Mo.", "Di.", "Mi.", "Do.", "Fr.", "Sa."];
   return days[day];
@@ -56,7 +56,6 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="container dropdown p-0"><div class="row mx-auto">`; // storing the HTML content
   forecast.forEach(function (forecastDay, index) {
-    for (let index = +1; index.lenght + 1; index++) return index;
     if (index >= 1 && index < 7) {
       forecastHTML += `
     <div class="col-2 p-1 text-center">

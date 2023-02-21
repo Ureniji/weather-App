@@ -90,11 +90,23 @@ function displayWeatherDetails(response) {
   );
   console.log(response);
 }
+
+function formatDay(forecastStamp) {
+  let date = new Date(forecastStamp * 1000);
+  let day = date.getDay();
+  let days = ["Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat.", "Sun."];
+  return days[day];
+}
+
+function forecastDay(response) {
+  console.log(response.data);
+}
+
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${data.coordinates.longitude}&lat=${data.coordinates.latitude}&key=61obb83f649eaaft2919d1d4dfea50a5`;
   axios.get(apiUrl).then(displayForecast);
 }
+
 function searchCity(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=61obb83f649eaaft2919d1d4dfea50a5&units=metric`;
   axios.get(apiUrl).then(displayWeatherDetails);
