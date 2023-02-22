@@ -65,6 +65,43 @@ const clock = setInterval(function now() {
 // }
 // window.requestAnimationFrame(update);
 
+// function formatDay(forecastStamp) {
+//   let date = new Date(forecastStamp * 1000);
+//   let day = date.getDay();
+//   let days = ["Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat.", "Sun."];
+//   return days[day];
+// }
+
+function displayForecast(response) {
+  console.log(response);
+  // let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  // creating a string that will store the HTML content
+  let forecastHTML = `<div class="row forecast-content">`;
+  let days = ["Mon.", "Tue.", "Wed.", "Thu.", "Fri."];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+                <div class="col-2 forecast-day bg-success">
+                  ${day}
+                  <img
+                    class="forecast-icon"
+                    src="/src/img/Icons/broken-clouds-night.svg"
+                    alt=""
+                    width="50"
+                  />
+                  <div class="forecast-temp">
+                    <span class="forecast-temp-min">12</span>
+                    <span class="forecast-temp-max">15</span>
+                  </div>
+                </div>
+              `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 function displayWeatherDetails(response) {
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
@@ -74,15 +111,15 @@ function displayWeatherDetails(response) {
   let iconElement = document.querySelector("#main-weather-icon");
 
   cityElement.textContent = response.data.city;
-  temperatureElement.textContent = `${Math.round(
+  temperatureElement.textContent = Math.round(
     response.data.daily[0].temperature.day
-  )}°`;
-  temperatureMaxElement.textContent = `${Math.round(
+  );
+  temperatureMaxElement.textContent = Math.round(
     response.data.daily[0].temperature.maximum
-  )}°`;
-  temperatureMinElement.textContent = `${Math.round(
+  );
+  temperatureMinElement.textContent = Math.round(
     response.data.daily[0].temperature.minimum
-  )}°`;
+  );
   descriptionElement.textContent = response.data.daily[0].condition.description;
   iconElement.setAttribute(
     "src",
@@ -91,24 +128,15 @@ function displayWeatherDetails(response) {
   console.log(response);
 }
 
-function formatDay(forecastStamp) {
-  let date = new Date(forecastStamp * 1000);
-  let day = date.getDay();
-  let days = ["Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat.", "Sun."];
-  return days[day];
-}
-
-function forecastDay(response) {
-  console.log(response.data);
-}
-
 function getForecast(coordinates) {
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${data.coordinates.longitude}&lat=${data.coordinates.latitude}&key=61obb83f649eaaft2919d1d4dfea50a5`;
+  const lon = coordinates.longitude;
+  const lat = coordinates.latitude;
+  const apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=61obb83f649eaaft2919d1d4dfea50a5&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
 function searchCity(city) {
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=61obb83f649eaaft2919d1d4dfea50a5&units=metric`;
+  const apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=61obb83f649eaaft2919d1d4dfea50a5&units=metric`;
   axios.get(apiUrl).then(displayWeatherDetails);
 }
 
@@ -130,3 +158,4 @@ let currentTime = new Date();
 dateElement.textContent = formatDate(currentTime);
 
 searchCity("berlin");
+displayForecast();
