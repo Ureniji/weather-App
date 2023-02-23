@@ -29,7 +29,10 @@ h5 {
 p {
   margin: 0;
 }
-
+input[type="text"]:focus {
+  box-shadow: 0 0 0 rgb(255, 255, 255);
+  color: hsl(208, 96%, 32%);
+}
 .weather {
   position: relative;
   margin-top: 20px;
