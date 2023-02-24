@@ -71,34 +71,51 @@ const clock = setInterval(function now() {
 //   let days = ["Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat.", "Sun."];
 //   return days[day];
 // }
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
 
 function displayForecast(response) {
-  console.log(response);
+  console.log(response.data.daily);
+  let temperatureMaxElement = document.querySelector("#temperature-max");
+  let temperatureMinElement = document.querySelector("#temperature-min");
+  temperatureMaxElement.textContent = Math.round(
+    response.data.daily[0].temperature.maximum
+  );
+  temperatureMinElement.textContent = Math.round(
+    response.data.daily[0].temperature.minimum
+  );
 
-  // let forecast = response.data.daily;
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  // creating a string that will store the HTML content
   let forecastHTML = `<div class="row forecast-content">`;
-  let days = ["Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat."];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` 
-                <div class="col-2 forecast-day bg-success">
-                  ${day}
+  forecast.forEach(function (forecastDay, index) {
+    if (index >= 1 && index < 7)
+      forecastHTML =
+        forecastHTML +
+        ` 
+                <div class="col-2 forecast-day">
+                  ${formatDay(forecastDay.time)}
                   <img
                     class="forecast-icon"
-                    src="/src/img/Icons/broken-clouds-night.svg"
+                    src="/src/img/Icons/${forecastDay.condition.icon}.svg"
                     alt=""
                   />
                   <div class="forecast-temp">
-                    <span class="forecast-temp-min">12</span>
-                    <span class="forecast-temp-max">15</span>
+                    <span class="forecast-temp-min">${Math.round(
+                      forecastDay.temperature.minimum
+                    )}</span>
+                    <span class="forecast-temp-max">${Math.round(
+                      forecastDay.temperature.maximum
+                    )}</span>
                   </div>
                 </div>
               `;
   });
-
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
@@ -108,25 +125,16 @@ function getForecast(coordinates) {
 }
 
 function displayWeatherDetails(response) {
-  console.log(response);
+  console.log(response.data);
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.textContent =
-    Math.round(response.data.daily[0].temperature.day) + `°`;
-  let temperatureMaxElement = document.querySelector("#temperature-max");
-  let temperatureMinElement = document.querySelector("#temperature-min");
-  temperatureMaxElement.textContent = Math.round(
-    response.daily[0].temperature.maximum
-  );
-  temperatureMinElement.textContent = Math.round(
-    response.data.daily[0].temperature.minimum
-  );
   let descriptionElement = document.querySelector("#weather-description");
-  descriptionElement.textContent = response.data.condition.description;
   let iconElement = document.querySelector("#main-weather-icon");
 
   cityElement.textContent = response.data.city;
-
+  temperatureElement.textContent =
+    Math.round(response.data.temperature.current) + `°`;
+  descriptionElement.textContent = response.data.condition.description;
   iconElement.setAttribute(
     "src",
     `src/img/Icons/${response.data.condition.icon}.svg`

@@ -31,7 +31,7 @@
   <body>
     <div class="weather container">
       <header>
-        <form class="header-content" id="search-form">
+        <form class="header-content" id="search-form" autocomplete="off">
           <div class="search">
             <input
               type="text"
@@ -40,9 +40,7 @@
               id="city-input"
               placeholder="search city"
               autofocus="off"
-              autocomplete="off"
               aria-label="search"
-              onclick="reset"
             />
             <button class="search-submit">
               <i class="fas fa-search fa-xs" aria-label="submit search"></i>
