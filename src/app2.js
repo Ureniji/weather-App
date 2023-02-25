@@ -99,7 +99,9 @@ function displayForecast(response) {
         forecastHTML +
         ` 
                 <div class="col-2 forecast-day">
-                  ${formatDay(forecastDay.time)}
+                   <div class="forecast-day-font">${formatDay(
+                     forecastDay.time
+                   )}</div>
                   <img
                     class="forecast-icon"
                     src="/src/img/Icons/${forecastDay.condition.icon}.svg"
@@ -108,7 +110,7 @@ function displayForecast(response) {
                   <div class="forecast-temp">
                     <span class="forecast-temp-min">${Math.round(
                       forecastDay.temperature.minimum
-                    )}</span>
+                    )} <span>°</span> </span>
                     <span class="forecast-temp-max">${Math.round(
                       forecastDay.temperature.maximum
                     )}</span>
@@ -149,7 +151,7 @@ function searchCity(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input").value;
+  let city = (document.querySelector("#city-input").value = "");
   searchCity(city);
 }
 
