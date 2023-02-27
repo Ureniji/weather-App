@@ -65,12 +65,6 @@ const clock = setInterval(function now() {
 // }
 // window.requestAnimationFrame(update);
 
-// function formatDay(forecastStamp) {
-//   let date = new Date(forecastStamp * 1000);
-//   let day = date.getDay();
-//   let days = ["Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat.", "Sun."];
-//   return days[day];
-// }
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -81,15 +75,6 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   console.log(response.data.daily);
-  let temperatureMaxElement = document.querySelector("#temperature-max");
-  let temperatureMinElement = document.querySelector("#temperature-min");
-  temperatureMaxElement.textContent = Math.round(
-    response.data.daily[0].temperature.maximum
-  );
-  temperatureMinElement.textContent = Math.round(
-    response.data.daily[0].temperature.minimum
-  );
-
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row forecast-content">`;
@@ -97,7 +82,7 @@ function displayForecast(response) {
     if (index >= 1 && index < 7)
       forecastHTML =
         forecastHTML +
-        ` 
+        `
                 <div class="col-2 forecast-day">
                    <div class="forecast-day-font">${formatDay(
                      forecastDay.time
@@ -110,7 +95,7 @@ function displayForecast(response) {
                   <div class="forecast-temp">
                     <span class="forecast-temp-min">${Math.round(
                       forecastDay.temperature.minimum
-                    )} <span>°</span> </span>
+                    )}</span>
                     <span class="forecast-temp-max">${Math.round(
                       forecastDay.temperature.maximum
                     )}</span>
@@ -121,8 +106,14 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+// current;
+// minutely;
+// hourly;
+// daily;
+// alerts;
 function getForecast(coordinates) {
-  const apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=61obb83f649eaaft2919d1d4dfea50a5&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}lon=${coordinates.lon}&exclude=minutely,hourly,daily,alerts&appid=aa09763d916df0424c840d55bfc2d2c9&units=metric`;
+  // const apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=61obb83f649eaaft2919d1d4dfea50a5&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -130,28 +121,37 @@ function displayWeatherDetails(response) {
   console.log(response.data);
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
+  let temperatureMaxElement = document.querySelector("#temperature-max");
+  let temperatureMinElement = document.querySelector("#temperature-min");
   let descriptionElement = document.querySelector("#weather-description");
   let iconElement = document.querySelector("#main-weather-icon");
 
-  cityElement.textContent = response.data.city;
-  temperatureElement.textContent =
-    Math.round(response.data.temperature.current) + `°`;
-  descriptionElement.textContent = response.data.condition.description;
+  cityElement.textContent = response.data.name;
+  temperatureElement.textContent = Math.round(response.data.main.temp) + `°`;
+  descriptionElement.textContent = response.data.weather[0].description;
   iconElement.setAttribute(
     "src",
-    `src/img/Icons/${response.data.condition.icon}.svg`
+    `src/img/Icons/${response.data.weather[0].icon}.svg`
   );
-  getForecast(response.data.coordinates);
+  // commented out for now, since API doesnt have min and max for city yet, placnning to include this later
+
+  temperatureMaxElement.textContent =
+    Math.round(response.data.main.temp_max) + `°`;
+  temperatureMinElement.textContent =
+    Math.round(response.data.main.temp_min) + `°`;
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
-  const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=61obb83f649eaaft2919d1d4dfea50a5&units=metric`;
+  let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=aa09763d916df0424c840d55bfc2d2c9&units=metric`;
   axios.get(apiUrl).then(displayWeatherDetails);
+  // const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=61obb83f649eaaft2919d1d4dfea50a5&units=metric`;
 }
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = (document.querySelector("#city-input").value = "");
+  let city = document.querySelector("#city-input").value;
   searchCity(city);
 }
 

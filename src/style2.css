@@ -35,7 +35,7 @@ p {
 .weather {
   margin-top: 20px;
   max-width: 600px;
-  max-height: 1000px;
+  max-height: 800px;
   box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.24),
     2px 2px 5px rgba(0, 0, 0, 0.2), 5px 5px 5px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -71,6 +71,10 @@ p {
   outline: 0;
   border-bottom: 2px solid var(--accent-crl-blue);
 }
+.search-input::placeholder {
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
 
 .search-submit {
   margin-left: auto;
@@ -82,7 +86,7 @@ p {
 }
 
 .fa-search {
-  color: hsl(359, 82%, 36%);
+  color: var(--accent-crl-red);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -101,7 +105,11 @@ p {
 /* weather-content */
 .main-content {
   display: flex;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+}
+
+.place {
+  font-size: 2rem;
 }
 
 .main-weather-icon {
@@ -111,7 +119,6 @@ p {
 }
 
 .weather-details {
-  font-size: 1.5rem;
   text-align: center;
   margin-right: auto;
 }
@@ -163,6 +170,8 @@ p {
 }
 /*  */
 .dropdown-btn {
+  padding: 0;
+  padding-left: 10px;
   border: 0;
   cursor: pointer;
   font-size: 1.2rem;
@@ -194,10 +203,13 @@ p {
   margin: 0;
   font-weight: 800;
 }
-
+.forecast-day {
+  display: block;
+  margin: 0 auto;
+}
 .forecast-temp {
   display: flex;
-  gap: 0.8rem;
+  gap: 1.5rem;
   justify-content: center;
 }
 
@@ -222,11 +234,11 @@ p {
   img {
     display: block;
     margin: 0 auto;
-    margin-top: 20px;
   }
 
   .weather {
-    width: 70vw;
+    width: 60vw;
+    height: calc(800px - 20%);
     padding: 0.5rem;
   }
 
@@ -246,7 +258,7 @@ p {
   .main-content {
     display: flex;
     flex-direction: column;
-    /* gap: 0.5rem; */
+    margin-top: 20px;
   }
 
   .currentTimeAndDate,
