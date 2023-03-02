@@ -11,18 +11,18 @@ function formatDate(date) {
   ];
   let monthIndex = date.getMonth();
   let months = [
-    "Jan.",
-    "Feb.",
-    "Mar.",
-    "Apr.",
+    "January",
+    "Februar",
+    "March",
+    "April",
     "Mai",
-    "Jun.",
-    "Jul.",
-    "Aug.",
-    "Sept.",
-    "Oct.",
-    "Nov.",
-    "Dec.",
+    "June",
+    "July",
+    "August",
+    "September.",
+    "October",
+    "November",
+    "December",
   ];
   let month = months[monthIndex];
   let day = days[dayIndex];
@@ -45,25 +45,6 @@ const clock = setInterval(function now() {
   minutes.textContent = min;
   seconds.textContent = sec;
 }, 1000);
-
-// clock isn't running a full circle after seconds reach 59 with window.requestAnimationFrame
-//  -> Reason behind this is:
-// function update(time) {
-//   console.log(time);
-//   const currentTime = new Date();
-//   const hr = currentTime.getHours();
-//   const min = currentTime.getMinutes();
-//   const sec = currentTime.getSeconds();
-
-//   if (hr < 10) hr = `0${hr}`;
-//   if (min < 10) min = `0${min}`;
-//   if (sec < 10) sec = `0${sec}`;
-//   hours.textContent = hr;
-//   minutes.textContent = min;
-//   seconds.textContent = sec;
-//   window.requestAnimationFrame(update);
-// }
-// window.requestAnimationFrame(update);
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -121,12 +102,12 @@ function displayWeatherDetails(response) {
   console.log(response.data);
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
-  let temperatureMaxElement = document.querySelector("#temperature-max");
-  let temperatureMinElement = document.querySelector("#temperature-min");
+  // let temperatureMaxElement = document.querySelector("#temperature-max");
+  // let temperatureMinElement = document.querySelector("#temperature-min");
   let descriptionElement = document.querySelector("#weather-description");
   let iconElement = document.querySelector("#main-weather-icon");
 
-  cityElement.textContent = response.data.name;
+  cityElement.textContent = response.data.city;
   temperatureElement.textContent =
     Math.round(response.data.temperature.current) + `°`;
   descriptionElement.textContent = response.data.condition.description;
@@ -136,12 +117,12 @@ function displayWeatherDetails(response) {
   );
   // commented out for now, since API doesnt have min and max for city yet, placnning to include this later
 
-  temperatureMaxElement.textContent =
-    Math.round(response.data.main.temp_max) + `°`;
-  temperatureMinElement.textContent =
-    Math.round(response.data.main.temp_min) + `°`;
+  // temperatureMaxElement.textContent =
+  //   Math.round(response.data.main.temp_max) + `°`;
+  // temperatureMinElement.textContent =
+  //   Math.round(response.data.main.temp_min) + `°`;
 
-  getForecast(response.data.coord);
+  getForecast(response.data.coordinates);
 }
 
 function searchCity(city) {
