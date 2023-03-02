@@ -93,7 +93,7 @@ function displayForecast(response) {
 // daily;
 // alerts;
 function getForecast(coordinates) {
-  // let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}lon=${coordinates.lon}&exclude=minutely,hourly,daily,alerts&appid=aa09763d916df0424c840d55bfc2d2c9&units=metric`;
+  // const apiUrl2 = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}lon=${coordinates.lon}&exclude=minutely,hourly,daily,alerts&appid=aa09763d916df0424c840d55bfc2d2c9&units=metric`;
   const apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=61obb83f649eaaft2919d1d4dfea50a5&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -102,8 +102,7 @@ function displayWeatherDetails(response) {
   console.log(response.data);
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
-  // let temperatureMaxElement = document.querySelector("#temperature-max");
-  // let temperatureMinElement = document.querySelector("#temperature-min");
+
   let descriptionElement = document.querySelector("#weather-description");
   let iconElement = document.querySelector("#main-weather-icon");
 
@@ -115,20 +114,22 @@ function displayWeatherDetails(response) {
     "src",
     `src/img/Icons/${response.data.condition.icon}.svg`
   );
-  // commented out for now, since API doesnt have min and max for city yet, placnning to include this later
-
-  // temperatureMaxElement.textContent =
-  //   Math.round(response.data.main.temp_max) + `°`;
-  // temperatureMinElement.textContent =
-  //   Math.round(response.data.main.temp_min) + `°`;
-
   getForecast(response.data.coordinates);
+}
+
+function displayMinMaxTemperature(response) {
+  console.log(response);
+  document.querySelector("#temperature-max").textContent =
+    Math.round(response.data.main.temp_max) + `°`;
+  document.querySelector("#temperature-min").textContent =
+    Math.round(response.data.main.temp_min) + `°`;
 }
 
 function searchCity(city) {
   const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=61obb83f649eaaft2919d1d4dfea50a5&units=metric`;
-  // let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=aa09763d916df0424c840d55bfc2d2c9&units=metric`;
+  const apiUrl2 = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=aa09763d916df0424c840d55bfc2d2c9&units=metric`;
   axios.get(apiUrl).then(displayWeatherDetails);
+  axios.get(apiUrl2).then(displayMinMaxTemperature);
 }
 
 function handleSubmit(event) {
