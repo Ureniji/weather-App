@@ -61,7 +61,7 @@ p {
 .search-input {
   position: absolute;
   top: 0;
-  bottom: none;
+  bottom: 0;
   border: none;
   text-align: center;
   font-size: 1.2rem;
