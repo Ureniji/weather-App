@@ -72,8 +72,9 @@ p {
   border-bottom: 2px solid var(--accent-crl-blue);
 }
 .search-input::placeholder {
-  opacity: 0.5;
+  opacity: 0.8;
   margin-bottom: 20px;
+  color: var(--accent-crl-yellow);
 }
 
 .search-submit {
@@ -241,8 +242,8 @@ p {
   }
 
   .weather {
-    width: 60vw;
-    height: calc(800px - 5%);
+    width: 80vw;
+    height: calc(800px - 20%);
     padding: 0.5rem;
   }
 
