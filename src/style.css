@@ -13,11 +13,7 @@ body {
   background: hsl(225, 3%, 72%);
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-}
-
-html {
-  height: -web-kit-fill-available;
+  /* overflow: hidden; */
 }
 
 ul {
@@ -26,10 +22,6 @@ ul {
 
 li {
   list-style: none;
-}
-
-h5 {
-  color: white;
 }
 
 p {
@@ -43,22 +35,21 @@ p {
   box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.24),
     2px 2px 5px rgba(0, 0, 0, 0.2), 5px 5px 5px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  padding: 0;
-  overflow: hidden;
 }
 
 .header-content {
   position: relative;
-  width: 30%;
-  margin-top: 2vh;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
   font-size: 1.3rem;
 }
 /* search-bar content */
 .search {
   display: flex;
   position: relative;
-  width: 60px;
-  padding: 0 0 0 20px;
+  width: 50px;
   transition: width 400ms cubic-bezier(0.15, 0.82, 0.18, 1.1);
 }
 
@@ -72,6 +63,7 @@ p {
   cursor: pointer;
   opacity: 0;
   outline: 0;
+  color: white;
   border-radius: none;
   border-bottom: 2px solid var(--accent-crl-blue);
 }
@@ -90,6 +82,8 @@ p {
 }
 
 .fa-search {
+  display: block;
+  margin: 0 auto;
   color: hsl(49, 100%, 51%);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -102,14 +96,13 @@ p {
   cursor: initial;
   opacity: 1;
   font-weight: 700;
-  color: hsl(0, 50%, 100%);
+  /* color: hsl(0, 50%, 100%); */
   background: transparent;
 }
 
 /* weather-content */
 .main-content {
   display: flex;
-  /* margin-top: 20px; */
 }
 
 .place {
@@ -117,7 +110,7 @@ p {
 }
 
 .main-weather-icon {
-  width: calc(200px + 15%);
+  max-width: calc(200px + 15%);
   margin: 0 auto;
   border: none;
   display: block;
@@ -133,8 +126,7 @@ p {
 }
 
 .weather-description {
-  opacity: 0.7;
-  color: var(--accent-crl-yellow);
+  opacity: 0.6;
 }
 
 .temperature-difference {
@@ -210,6 +202,7 @@ p {
 .forecast-content {
   margin: 0;
   font-weight: 800;
+  padding-bottom: 5px;
 }
 .forecast-day {
   display: block;
@@ -253,7 +246,6 @@ p {
   .weather {
     width: 70vw;
     min-height: calc(800px - 20%);
-    padding: 0.5rem;
   }
 
   .weather-details {
@@ -262,17 +254,16 @@ p {
   }
 
   .header-content {
-    width: 160px;
+    width: 200px;
     display: block;
     margin: 0 auto;
-    margin-top: 2vh;
     font-size: 1em;
   }
 
   .main-content {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .currentTimeAndDate,
@@ -281,11 +272,9 @@ p {
     text-align: center;
     justify-content: center;
   }
-
   .search {
     padding: 0;
   }
-
   .btn {
     display: block;
     margin: 0 auto;

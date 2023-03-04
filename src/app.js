@@ -3,6 +3,14 @@ const setHeight = () => {
   document.body.style.height = `${currentHeight}px`;
 };
 
+const input = document.querySelector("input");
+const span = document.querySelector(".input-grow");
+
+input.addEventListener("input", function (event) {
+  span.innerHTML = this.value.replace(/\s/g, "&nbsp");
+  this.style.width = span.offsetWidth + "px";
+});
+
 function formatDate(date) {
   let dayIndex = date.getDay();
   let days = [
@@ -150,7 +158,7 @@ let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.textContent = formatDate(currentTime);
 
-window.addEventListener("resize", setHeight);
-setHeight();
+// window.addEventListener("resize", setHeight);
+// setHeight();
 
 searchCity("berlin");
