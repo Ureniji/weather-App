@@ -1,3 +1,8 @@
+const setHeight = () => {
+  const currentHeight = window.innerHeight;
+  document.body.style.height = `${currentHeight}px`;
+};
+
 function formatDate(date) {
   let dayIndex = date.getDay();
   let days = [
@@ -144,5 +149,8 @@ let seconds = document.querySelector("#seconds");
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.textContent = formatDate(currentTime);
+
+window.addEventListener("resize", setHeight);
+setHeight();
 
 searchCity("berlin");

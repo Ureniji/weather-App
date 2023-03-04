@@ -16,6 +16,10 @@ body {
   overflow: hidden;
 }
 
+html {
+  height: -web-kit-fill-available;
+}
+
 ul {
   margin: 20px;
 }
@@ -53,7 +57,7 @@ p {
 .search {
   display: flex;
   position: relative;
-  width: 50px;
+  width: 60px;
   padding: 0 0 0 20px;
   transition: width 400ms cubic-bezier(0.15, 0.82, 0.18, 1.1);
 }
@@ -129,6 +133,7 @@ p {
 }
 
 .weather-description {
+  opacity: 0.7;
   color: var(--accent-crl-yellow);
 }
 
@@ -246,8 +251,8 @@ p {
   }
 
   .weather {
-    width: 90vw;
-    height: calc(800px - 40%);
+    width: 70vw;
+    min-height: calc(800px - 20%);
     padding: 0.5rem;
   }
 
