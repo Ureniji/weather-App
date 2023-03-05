@@ -55,8 +55,6 @@ p {
 
 .search-input {
   position: absolute;
-  top: 0;
-  bottom: 0;
   border: none;
   text-align: center;
   font-size: 1.2rem;
@@ -97,6 +95,9 @@ p {
   opacity: 1;
   font-weight: 700;
   /* color: hsl(0, 50%, 100%); */
+  -webkit-appearance: none !important;
+  border-radius: 0 3px 3px 0;
+  padding-bottom: 5px;
   background: transparent;
 }
 
@@ -269,7 +270,7 @@ p {
   }
 
   .header-content {
-    width: 200px;
+    width: 250px;
     display: block;
     margin: 0 auto;
     font-size: 1em;
