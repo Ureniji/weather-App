@@ -1,5 +1,5 @@
 function setHeight() {
-  const currentHeight = window.innerHeight + 0.01;
+  const vh = window.innerHeight + 0.01;
   document.documentElement.style.setProperty("--vh", vh + "px");
 }
 setHeight();
@@ -27,7 +27,7 @@ function formatDate(date) {
     "June",
     "July",
     "August",
-    "September.",
+    "September",
     "October",
     "November",
     "December",

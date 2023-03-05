@@ -94,8 +94,6 @@ p {
   cursor: initial;
   opacity: 1;
   font-weight: 700;
-  /* color: hsl(0, 50%, 100%); */
-  -webkit-appearance: none !important;
   border-radius: 0 3px 3px 0;
   padding-bottom: 5px;
   background: transparent;
@@ -172,6 +170,14 @@ p {
   font-weight: 700;
   opacity: 0.6;
 }
+
+.currentTimeAndDate,
+.clock {
+  font-family: Verdana, sans-serif;
+}
+.hours {
+  font-weight: 900;
+}
 /*  */
 .dropdown-btn {
   padding: 0;
@@ -208,7 +214,7 @@ p {
 .forecast-content {
   margin: 0;
   font-weight: 800;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 .forecast-day {
   display: block;
@@ -280,13 +286,6 @@ p {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
-  }
-
-  .currentTimeAndDate,
-  .clock {
-    font-family: Verdana, sans-serif;
-    text-align: center;
-    justify-content: center;
   }
   .search {
     padding: 0;
