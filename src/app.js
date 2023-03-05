@@ -1,15 +1,10 @@
-const setHeight = () => {
-  const currentHeight = window.innerHeight;
-  document.body.style.height = `${currentHeight}px`;
-};
-
-const input = document.querySelector("input");
-const span = document.querySelector(".input-grow");
-
-input.addEventListener("input", function (event) {
-  span.innerHTML = this.value.replace(/\s/g, "&nbsp");
-  this.style.width = span.offsetWidth + "px";
-});
+function setHeight() {
+  const currentHeight = window.innerHeight + 0.01;
+  document.documentElement.style.setProperty("--vh", vh + "px");
+}
+setHeight();
+window.addEventListener("resize", setHeight);
+window.addEventListener("orientationchange", setHeight);
 
 function formatDate(date) {
   let dayIndex = date.getDay();
