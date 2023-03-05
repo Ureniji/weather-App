@@ -9,11 +9,15 @@
   --accent-crl-yellow: hsl(49, 100%, 51%);
 }
 
+html,
+body {
+  overflow: hidden;
+}
+
 body {
   background: hsl(225, 3%, 72%);
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 ul {
