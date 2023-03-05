@@ -109,7 +109,7 @@ p {
 }
 
 .main-weather-icon {
-  max-width: calc(200px + 15%);
+  max-width: calc(200px + 10%);
   margin: 0 auto;
   border: none;
   display: block;
@@ -250,6 +250,7 @@ p {
 
 @media (max-width: 576px) {
   .main-weather-icon {
+    max-width: calc(200px + 10%);
     display: block;
     margin: 0 auto;
   }
