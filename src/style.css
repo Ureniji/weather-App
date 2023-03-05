@@ -62,7 +62,7 @@ p {
   opacity: 0;
   outline: 0;
   color: white;
-  border-radius: none;
+  border-radius: 0;
   border-bottom: 2px solid var(--accent-crl-blue);
 }
 .search-input::placeholder {
@@ -94,7 +94,7 @@ p {
   cursor: initial;
   opacity: 1;
   font-weight: 700;
-  border-radius: 0 3px 3px 0;
+  border-radius: 0;
   padding-bottom: 5px;
   background: transparent;
 }
