@@ -7,6 +7,8 @@
   --accent-crl-blue: #0367b4;
   --accent-crl-red: hsl(0, 97%, 43%);
   --accent-crl-yellow: hsl(49, 100%, 51%);
+  --width: 600px;
+  --height: 800px;
 }
 
 body {
@@ -29,8 +31,8 @@ p {
 
 .weather {
   margin-top: 20px;
-  max-width: 600px;
-  max-height: 800px;
+  max-width: var(--width);
+  max-height: var(--height);
   box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.24),
     2px 2px 5px rgba(0, 0, 0, 0.2), 5px 5px 5px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -249,8 +251,11 @@ p {
 }
 
 @media (max-width: 576px) {
+  .content {
+    height: calc(var(--height) - 10%);
+  }
   .main-weather-icon {
-    max-width: calc(200px + 10%);
+    max-width: calc(200px - 10%);
     display: block;
     margin: 0 auto;
   }
@@ -277,7 +282,7 @@ p {
   }
 
   .header-content {
-    width: 250px;
+    width: 200px;
     display: block;
     margin: 0 auto;
     font-size: 1em;
