@@ -107,6 +107,7 @@ p {
 
 .place {
   font-size: 2rem;
+  color: white;
 }
 
 .main-weather-icon {
@@ -248,15 +249,14 @@ p {
   }
   .content {
     min-height: calc(var(--vh) * 100);
-    /* min-height: 100vh;
+    min-height: 100vh;
     min-height: -moz-available;
     min-height: -webkit-fill-available;
-    min-height: fill-available; */
+    min-height: fill-available;
   }
 
   .weather {
     width: 90vw;
-    /* min-height: calc(800px - 20%); */
     display: flex;
     flex-direction: column;
     justify-content: center;
