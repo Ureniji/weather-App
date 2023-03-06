@@ -255,7 +255,7 @@ p {
     height: calc(var(--height) - 10%);
   }
   .main-weather-icon {
-    max-width: calc(200px - 10%);
+    max-width: 150px;
     display: block;
     margin: 0 auto;
   }
