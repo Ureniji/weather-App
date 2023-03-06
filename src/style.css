@@ -251,9 +251,6 @@ p {
 }
 
 @media (max-width: 576px) {
-  .content {
-    height: calc(var(--height) - 10%);
-  }
   .main-weather-icon {
     max-width: 150px;
     display: block;
