@@ -111,7 +111,7 @@ p {
 }
 
 .main-weather-icon {
-  max-width: calc(200px + 10%);
+  max-width: calc(200px + 20%);
   margin: 0 auto;
   border: none;
   display: block;
