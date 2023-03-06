@@ -4,7 +4,7 @@ function setHeight() {
 }
 setHeight();
 window.addEventListener("resize", setHeight);
-// window.addEventListener("orientationchange", setHeight);
+window.addEventListener("orientationchange", setHeight);
 
 function formatDate(date) {
   let dayIndex = date.getDay();

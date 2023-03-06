@@ -249,7 +249,7 @@ p {
     opacity: 0.1;
   }
 }
-/* 
+
 @media (max-width: 576px) {
   .main-weather-icon {
     max-width: 150px;
@@ -312,4 +312,4 @@ p {
   .blockquote-footer {
     font-size: 0.5rem;
   }
-} */
+}
