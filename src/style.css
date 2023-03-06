@@ -249,20 +249,20 @@ p {
     opacity: 0.1;
   }
 }
-
+/* 
 @media (max-width: 576px) {
   .main-weather-icon {
     max-width: 150px;
     display: block;
     margin: 0 auto;
   }
-  /* .content {
+  .content {
     min-height: calc(var(--vh) * 100);
     min-height: 100vh;
     min-height: -moz-available;
     min-height: -webkit-fill-available;
     min-height: fill-available;
-  } */
+  }
 
   .weather {
     margin-top: 5px;
@@ -312,4 +312,4 @@ p {
   .blockquote-footer {
     font-size: 0.5rem;
   }
-}
+} */
