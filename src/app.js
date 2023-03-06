@@ -4,7 +4,7 @@ function setHeight() {
 }
 setHeight();
 window.addEventListener("resize", setHeight);
-// window.addEventListener("orientationchange", setHeight);
+window.addEventListener("orientationchange", setHeight);
 
 function formatDate(date) {
   let dayIndex = date.getDay();
@@ -153,7 +153,7 @@ let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.textContent = formatDate(currentTime);
 
-// window.addEventListener("resize", setHeight);
-// setHeight();
+window.addEventListener("resize", setHeight);
+setHeight();
 
 searchCity("berlin");
