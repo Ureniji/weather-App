@@ -1,9 +1,9 @@
-function setHeight() {
-  const vh = window.innerHeight + 0.01;
-  document.documentElement.style.setProperty("--vh", vh + "px");
-}
-setHeight();
-window.addEventListener("resize", setHeight);
+// function setHeight() {
+//   const vh = window.innerHeight + 0.01;
+//   document.documentElement.style.setProperty("--vh", vh + "px");
+// }
+// setHeight();
+// window.addEventListener("resize", setHeight);
 // window.addEventListener("orientationchange", setHeight);
 
 function formatDate(date) {
