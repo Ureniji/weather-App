@@ -153,7 +153,6 @@ let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.textContent = formatDate(currentTime);
 
-window.addEventListener("resize", setHeight);
 setHeight();
 
 searchCity("berlin");
