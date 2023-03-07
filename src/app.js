@@ -1,10 +1,10 @@
-// function setHeight() {
-//   const vh = window.innerHeight + 0.01;
-//   document.documentElement.style.setProperty("--vh", vh + "px");
-// }
-// setHeight();
-// window.addEventListener("resize", setHeight);
-// window.addEventListener("orientationchange", setHeight);
+function setHeight() {
+  const vh = window.innerHeight + 0.01;
+  document.documentElement.style.setProperty("--vh", vh + "px");
+}
+setHeight();
+window.addEventListener("resize", setHeight);
+window.addEventListener("orientationchange", setHeight);
 
 function formatDate(date) {
   let dayIndex = date.getDay();
@@ -153,6 +153,6 @@ let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.textContent = formatDate(currentTime);
 
-// setHeight();
+setHeight();
 
 searchCity("berlin");

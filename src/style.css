@@ -111,6 +111,7 @@ p {
 }
 
 .main-weather-icon {
+  max-height: 240px;
   max-width: 240px;
   margin: 0 auto;
   border: none;
@@ -252,7 +253,8 @@ p {
 
 @media (max-width: 576px) {
   .main-weather-icon {
-    max-width: 150px;
+    max-width: 180px;
+    max-height: 180px;
     display: block;
     margin: 0 auto;
   }
