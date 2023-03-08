@@ -252,15 +252,6 @@ p {
 }
 
 @media (max-width: 576px) {
-  body {
-    min-height: 100%;
-    /* mobile viewport bug fix */
-    min-height: -webkit-fill-available;
-  }
-
-  html {
-    height: 100%;
-  }
   .main-weather-icon {
     max-width: 180px;
     max-height: 180px;
@@ -269,10 +260,10 @@ p {
   }
   .content {
     min-height: calc(var(--vh) * 100);
-    /* min-height: 100vh; */
-    min-height: -moz-available;
-    /* min-height: -webkit-fill-available; */
-    min-height: fill-available;
+    min-height: 100vh;
+    /* min-height: -moz-available;
+    min-height: -webkit-fill-available;
+    min-height: fill-available; */
   }
 
   .weather {
