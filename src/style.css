@@ -253,13 +253,13 @@ p {
 
 @media (max-width: 576px) {
   body {
-    min-height: 100vh;
+    min-height: 100%;
     /* mobile viewport bug fix */
     min-height: -webkit-fill-available;
   }
 
   html {
-    height: -webkit-fill-available;
+    height: 100%;
   }
   .main-weather-icon {
     max-width: 180px;
