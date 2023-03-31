@@ -1,7 +1,18 @@
+// function setHeight() {
+//   const vh = window.innerHeight + 0.01;
+//   document.documentElement.style.setProperty("--vh", vh + "px");
+// }
 function setHeight() {
-  const vh = window.innerHeight + 0.01;
-  document.documentElement.style.setProperty("--vh", vh + "px");
+  const vh = document.documentElement.clientHeight / 100;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
+// function setHeight() {
+//   const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+//   if (!isSafari) {
+//     const vh = document.documentElement.clientHeight / 100;
+//     document.documentElement.style.setProperty("--vh", `${vh}px`);
+//   }
+// }
 setHeight();
 window.addEventListener("resize", setHeight);
 window.addEventListener("orientationchange", setHeight);
@@ -77,7 +88,7 @@ function displayForecast(response) {
                      forecastDay.time
                    )}</div>
                   <img
-                    class="forecast-icon"
+                    class="forecast-weather-icon"
                     src="/src/img/Icons/${forecastDay.condition.icon}.svg"
                     alt=""
                   />
