@@ -6,6 +6,14 @@ setHeight();
 window.addEventListener("resize", setHeight);
 window.addEventListener("orientationchange", setHeight);
 
+const input = document.querySelector("input");
+const span = document.querySelector("span");
+
+input.addEventListener("input", function (event) {
+  span.innerHTML = this.value.replace(/\s/g, "&nbsp;");
+  this.style.width = span.offsetWidth + "px";
+});
+
 function formatDate(date) {
   let dayIndex = date.getDay();
   let days = [
@@ -138,8 +146,9 @@ function searchCity(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input").value;
+  let city = document.querySelector("#city-input");
   searchCity(city);
+  // city.value = "";
 }
 
 let searchForm = document.querySelector("#search-form");
@@ -152,7 +161,5 @@ let seconds = document.querySelector("#seconds");
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.textContent = formatDate(currentTime);
-
-setHeight();
 
 searchCity("berlin");
