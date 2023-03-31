@@ -273,17 +273,16 @@ p {
     display: block;
     margin: 0 auto;
   }
-  .content {
+  /* .content {
     min-height: 100vh;
-  }
-
+  } */
   .weather {
-    margin-top: 5px;
-    width: 90vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
+    margin-top: 50px;
+    width: 90%;
+    height: var(--height - 5%);
+    box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.24),
+      2px 2px 5px rgba(0, 0, 0, 0.2), 5px 5px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
   }
 
   .weather-details {
@@ -302,6 +301,7 @@ p {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    padding: 0;
   }
   .search {
     padding: 0;
@@ -311,7 +311,8 @@ p {
     margin: 0 auto;
   }
   .forecast-icon {
-    width: calc(60px - 40%);
+    width: calc(60px);
+    padding: 900px;
   }
   .forecast-content {
     margin: 0;
