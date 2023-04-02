@@ -146,9 +146,8 @@ function searchCity(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input");
+  let city = document.querySelector("#city-input").value;
   searchCity(city);
-  // city.value = "";
 }
 
 let searchForm = document.querySelector("#search-form");
