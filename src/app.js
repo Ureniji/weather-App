@@ -14,6 +14,21 @@ input.addEventListener("input", function (event) {
   this.style.width = span.offsetWidth + "px";
 });
 
+const clock = setInterval(function now() {
+  let currentTime = new Date();
+  let hr = currentTime.getHours();
+  if (hr < 10) hr = `0${hr}`;
+
+  let min = currentTime.getMinutes();
+  if (min < 10) min = `0${min}`;
+
+  let sec = currentTime.getSeconds();
+  if (sec < 10) sec = `0${sec}`;
+  hours.textContent = hr;
+  minutes.textContent = min;
+  seconds.textContent = sec;
+}, 1000);
+
 function formatDate(date) {
   let dayIndex = date.getDay();
   let days = [
@@ -46,21 +61,6 @@ function formatDate(date) {
   let year = date.getFullYear();
   return `${day}, ${Date} ${month} ${year} `;
 }
-
-const clock = setInterval(function now() {
-  let currentTime = new Date();
-  let hr = currentTime.getHours();
-  if (hr < 10) hr = `0${hr}`;
-
-  let min = currentTime.getMinutes();
-  if (min < 10) min = `0${min}`;
-
-  let sec = currentTime.getSeconds();
-  if (sec < 10) sec = `0${sec}`;
-  hours.textContent = hr;
-  minutes.textContent = min;
-  seconds.textContent = sec;
-}, 1000);
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
