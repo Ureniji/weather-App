@@ -1,10 +1,10 @@
-function setHeight() {
-  const vh = document.documentElement.clientHeight / 100;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-}
-setHeight();
-window.addEventListener("resize", setHeight);
-window.addEventListener("orientationchange", setHeight);
+// function setHeight() {
+//   const vh = document.documentElement.clientHeight / 100;
+//   document.documentElement.style.setProperty("--vh", `${vh}px`);
+// }
+// setHeight();
+// window.addEventListener("resize", setHeight);
+// window.addEventListener("orientationchange", setHeight);
 
 const input = document.querySelector("input");
 const span = document.querySelector("span");
@@ -76,7 +76,7 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row forecast-content">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index >= 1 && index < 7)
+    if (index >= 1 && index < 6)
       forecastHTML =
         forecastHTML +
         `

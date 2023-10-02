@@ -14,7 +14,7 @@
 body,
 html,
 .content {
-  height: 100vh;
+  height: 100dvh;
   height: calc(var(--vh, 1vh) * 100);
 }
 /* body,
@@ -206,8 +206,6 @@ p {
 }
 /*  */
 .dropdown-btn {
-  padding: 0;
-  padding-left: 10px;
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
@@ -276,6 +274,10 @@ p {
 }
 
 @media (max-width: 576px) {
+  .content {
+    height: 100dvh;
+  }
+
   .main-weather-icon {
     min-width: 180px;
     display: block;
@@ -313,22 +315,26 @@ p {
   .search {
     padding: 0;
   }
-  .btn {
+  .dropdown-btn {
     display: block;
-    margin: 0 auto;
+    margin: 5px auto;
   }
   .forecast-icon {
-    width: calc(60px);
-    padding: 900px;
+    width: calc(30px);
+    padding: 10px;
   }
   .forecast-content {
-    margin: 0;
     font-weight: 700;
   }
+  .forecast-day {
+    margin: 5px;
+  } 
+  
   .forecast-temp {
     display: flex;
-    gap: 0.5rem;
+    gap: .5rem;
     justify-content: center;
+    padding-bottom: 5px;
   }
   .blockquote-footer {
     font-size: 0.5rem;
