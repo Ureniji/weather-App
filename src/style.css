@@ -46,7 +46,7 @@ p {
 }
 
 .weather {
-  margin-top: 50px;
+  margin-top: 20px;
   max-width: var(--width);
   max-height: var(--height);
   box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.24),
